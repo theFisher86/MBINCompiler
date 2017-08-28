@@ -1,6 +1,7 @@
 ﻿namespace MBINCompiler.Models.Structs
 {
-    public class GcScanData : NMSTemplate       // possibly used in a global
+    [NMS(Size = 0x14)]
+    public class GcScanData : NMSTemplate
     {
 	  /* 0x000 */ public int ScanType;
 	  public string[] ScanTypeValues()

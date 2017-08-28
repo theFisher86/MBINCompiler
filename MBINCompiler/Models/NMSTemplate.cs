@@ -306,6 +306,9 @@ namespace MBINCompiler.Models
         {
             if (CustomSerialize(writer, fieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex))
                 return;
+            //Console.WriteLine(fieldType.Name);
+            //Console.WriteLine("bloop");
+            //System.Threading.Thread.Sleep(200);
             switch (fieldType.Name)
             {
                 case "String":
@@ -394,6 +397,7 @@ namespace MBINCompiler.Models
                     writer.Align(8, 0);
                     long refPos = writer.BaseStream.Position;
                     var template = (NMSTemplate)fieldData;
+                    //Console.WriteLine(template);
                     if (template == null || template.GetType().Name == "EmptyNode")
                     {
                         writer.Write((Int64)0); // listPosition
@@ -511,10 +515,10 @@ namespace MBINCompiler.Models
                         //Console.WriteLine("hello");
                         //Console.WriteLine(field);
 
-                        System.Threading.Thread.Sleep(1000);
-                        entryOffsetNamePairs.Add(writer.BaseStream.Position, field.GetType().Name);
+                        //System.Threading.Thread.Sleep(1000);
+                        //entryOffsetNamePairs.Add(writer.BaseStream.Position, field.GetType().Name);
                         NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
-                        SerializeValue(writer, field.FieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex, structLength - (int)fieldAddr);
+                        SerializeValue(writer, field.FieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex, structLength);// - (int)fieldAddr);
 
                     }
                     else
@@ -696,7 +700,8 @@ namespace MBINCompiler.Models
 
             foreach (var entry in list)
             {
-
+                //Console.WriteLine(entry.GetType());
+                //System.Threading.Thread.Sleep(1000);
                 if (PrintToDebug) Debug.WriteLine($"[C] writing {entry.GetType().Name} to offset 0x{writer.BaseStream.Position:X}");
                 SerializeValue(writer, entry.GetType(), entry, null, null, ref additionalData, ref addtDataIndexThis);
             }
@@ -705,8 +710,6 @@ namespace MBINCompiler.Models
             {
                 writer.Write(0xFEFEFEFEFEFEFEFE);
             }
-
-
         }
 
         public byte[] SerializeBytes()

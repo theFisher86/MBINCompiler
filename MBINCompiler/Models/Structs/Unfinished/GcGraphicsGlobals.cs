@@ -168,8 +168,6 @@
         public float Unknown408;
         public bool Unknown40C;
         public bool Unknown40D;
-        [NMS(Size = 0x2, Ignore = true)]
-        public byte[] Padding40E;
         public float Unknown410;
         public float Unknown414;
         public float Unknown418;
