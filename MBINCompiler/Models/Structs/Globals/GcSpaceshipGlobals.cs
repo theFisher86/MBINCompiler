@@ -2,7 +2,7 @@
 {
     public class GcSpaceshipGlobals : NMSTemplate
     {
-        /* 0X0 */ public bool Unknown0;
+        /* 0X0 */ public bool RollAndYawKeySwap;
         /* 0X1 */ public bool Unknown1;
         /* 0X2 */ public bool Unknown2;
         /* 0X3 */ public bool Unknown3;
