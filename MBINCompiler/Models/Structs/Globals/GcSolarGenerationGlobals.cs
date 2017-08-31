@@ -10,12 +10,12 @@
         /* 0x14 */ public float Unknown14;
         /* 0x18 */ public float Unknown18;
         /* 0x1C */ public float Unknown1C;
-        /* 0x20 */ public float MinSpaceStationPlanetDistance;
-        /* 0x24 */ public float MaxSpaceStationPlanetDistance;
+        /* 0x20 */ public float MinSolarSystemScale;        // ??
+        /* 0x24 */ public float MaxSolarSystemScale;        // ??
         /* 0x28 */ public bool Unknown28;
         [NMS(Size = 0x3, Ignore = true)]
         /* 0x29 */ public byte[] Padding29;
-        /* 0x2C */ public float Unknown2C;      // possibly meant to be 4 bytes as padding at end of struct?
+        /* 0x2C */ public float Unknown2C;      // possibly meant to be 4 bytes as padding at end of struct? or padding before start??
         /* 0x30 */ public bool Unknown30;
         /* 0x34 */ public float Unknown34;
         /* 0x38 */ public float Unknown38;
@@ -92,11 +92,21 @@
         /* 0x150 */ public float AsteroidMinDistanceFromSpacestation;
         /* 0x154 */ public float Unknown154;
         /* 0x158 */ public float Unknown158;
-        
-        [NMS(Size = 0x6, EnumValue = new string[0x6] { "Standard", "Freighter", "CapitalFreighter", "SmallFreighter", "TinyFreighter", "Unknown" })]
-        /* 0x15C */ public GcGeneratedShipCounts[] Unknown15C;
+        [NMS(Size = 0x4, Ignore = true)]
+        /* 0x15C */ public byte[] Padding15C;
+        /* 0x160 */ public float Unknown160;
+        /* 0x164 */ public float Unknown164;
+        /* 0x168 */ public float Unknown168;
+        /* 0x16C */ public float Unknown16C;
+        /* 0x170 */ public float Unknown170;
+        /* 0x174 */ public float Unknown174;
+        /* 0x178 */ public float Unknown178;
+        /* 0x17C */ public int UnknownInt17C;
+        /* 0x180 */ public float Unknown180;
+        /* 0x184 */ public float Unknown184;
+        /* 0x188 */ public float Unknown188;
 
-        [NMS(Size = 0xC, Ignore = true)]
-        public byte[] Endpadding;   // I guess?
+        [NMS(Size = 0x7, EnumValue = new string[0x7] { "Standard", "Freighter", "CapitalFreighter", "SmallFreighter", "TinyFreighter", "Unknown1", "Unknown2" })]
+        /* 0x18C */ public GcAISpaceshipWeightingData[] Unknown18C;
     }
 }

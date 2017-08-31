@@ -2,50 +2,59 @@
 {
     public class GcTerrainGlobals : NMSTemplate
     {
-        public bool Unknown0; // if set, skips a lot of code
-        public bool Unknown1; // unused?
-        public bool Unknown2; // if unset, does some more calcs
-        public bool Unknown3; // unused
+        /* 0X0 */ public float Unknown;
+        /* 0X4 */ public float Unknown4;
+        /* 0X8 */ public float Unknown8;
+        /* 0XC */ public float UnknownC;
+        /* 0X10 */ public float Unknown10;
+        /* 0X14 */ public float Unknown14;
+        /* 0X18 */ public float Unknown18;
+        /* 0X1C */ public float Unknown1C;
+        /* 0X20 */ public float Unknown20;
+        /* 0X24 */ public float Unknown24;
+        /* 0X28 */ public float Unknown28;
+        /* 0X2C */ public float Unknown2C;
+        /* 0X30 */ public float Unknown30;
 
-        public float Unknown4; // planet gen related
-        public float Unknown8; // planet gen related
-        public float UnknownC; // planet gen related
+        // new offset: 0x34 for the following data I think...
+        // there are some changes though...
 
-        public float Unknown10; // unused?
-        public float Unknown14; // unused?
-        public int UnknownInt18;           // possibly 4 bool?
+        public float Unknown34; // planet gen related
+        public float Unknown38; // planet gen related
+        public float Unknown3C; // planet gen related
+
+        public float Unknown40; // unused?
+        public float Unknown44; // unused?
+        public int UnknownInt48;           // possibly 4 bool?
 
 
-        public int UnknownInt1C;
-        public int UnknownInt20;
-        public int UnknownInt24;
+        public int UnknownInt4C;
+        public int UnknownInt50;
+        public int UnknownInt54;
 
-        public float Unknown28;
-        public float Unknown2C;
-        public float Unknown30;
-        public float Unknown34;
-        public float Unknown38;
-        public float Unknown3C;
-        public float Unknown40;
+        public float Unknown58;
+        public float Unknown5C;
+        public float Unknown60;
+        public float Unknown64;
+        public float Unknown68;
+        public float Unknown6C;
+        public float Unknown70;
 
-        public GcMiningSubstanceData Unknown44;
-        //public int UnknownInt48;
-        //public int UnknownInt4C;
+        public GcMiningSubstanceData Unknown74;
+        public GcMiningSubstanceData Unknown80;
+        public GcMiningSubstanceData Unknown8C;
+        public GcMiningSubstanceData Unknown98;
 
-        public GcMiningSubstanceData Unknown50;
-        //public int UnknownInt54;
-        //public int UnknownInt58;
+        // colour maybe?
+        /* 0XA4 */ public float UnknownA4;
+        /* 0XA8 */ public float UnknownA8;
+        /* 0XAC */ public float UnknownAC;
+        /* 0XB0 */ public float UnknownB0;
 
-        public GcMiningSubstanceData Unknown5C;
-        //public int UnknownInt60;
-        //public int UnknownInt64;
+        /* 0XB4 */ public GcTerrainOverlayColours UnknownB4;
+        /* 0XCC */ public GcTerrainOverlayColours UnknownCC;
+        /* 0XE4 */ public GcTerrainOverlayColours UnknownE4;
 
-        public GcMiningSubstanceData Unknown68;
-        //public int UnknownInt6C;
-        //public int UnknownInt70;
-
-        public GcTerrainOverlayColours Unknown74;
-        public GcTerrainOverlayColours Unknown8C;
-        public GcTerrainOverlayColours UnknownA4;
+        /* 0xFC */ public GcTerrainEditing UnknownFC;
     }
 }

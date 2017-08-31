@@ -200,7 +200,7 @@ namespace MBINCompiler.Models
                 //Console.WriteLine("Gk Hack: " + templateName + " Deserialized Value: " + field.Name + " value: " + field.GetValue(obj));
                 //Console.WriteLine($"{templateName} position: 0x{reader.BaseStream.Position:X}");
                 /*using (System.IO.StreamWriter file =
-                    new System.IO.StreamWriter(@"T:\mbincompiler_debug.txt", true))
+                    new System.IO.StreamWriter(@"D:\mbincompiler_debug.txt", true))
                 {
                     file.WriteLine(" Deserialized Value: " + field.Name + " value: " + field.GetValue(obj));
                     file.WriteLine($"{templateName} position: 0x{reader.BaseStream.Position:X}");
@@ -232,26 +232,32 @@ namespace MBINCompiler.Models
             var list = new List<NMSTemplate>();
             if (numTemplates > 0)
             {
-                Dictionary<long, string> templates = new Dictionary<long, string>();
+                //Dictionary<long, string> templates = new Dictionary<long, string>();
+                List < KeyValuePair < long, String >> templates = new List<KeyValuePair<long, String>>();
                 for (int i = 0; i < numTemplates; i++)
                 {
                     long nameOffset = reader.BaseStream.Position;
                     long templateOffset = reader.ReadInt64();
                     var name = reader.ReadString(Encoding.UTF8, 0x40, true);
+                    /*Console.WriteLine(name);
+                    Console.WriteLine(nameOffset);
+                    Console.WriteLine(templateOffset);
+                    Console.WriteLine(nameOffset + templateOffset);*/
+
                     if (templateOffset == 0)
                     {
                         // sometimes there are lists which have n values, but less than n actual structs in them. We replace the empty thing with EmptyNode
-                        templates.Add(nameOffset + templateOffset, "EmptyNode");
+                        templates.Add(new KeyValuePair<long, string>(nameOffset + templateOffset, "EmptyNode"));
                     }
                     else
                     {
-                        templates.Add(nameOffset + templateOffset, name);
+                        templates.Add(new KeyValuePair<long, string>(nameOffset + templateOffset, name));
                     }
                 }
 
                 long pos = reader.BaseStream.Position;
 
-                foreach (var templateInfo in templates)
+                foreach (KeyValuePair<long, string> templateInfo in templates)
                 {
                     reader.BaseStream.Position = templateInfo.Key;
                     var template = DeserializeBinaryTemplate(reader, templateInfo.Value);

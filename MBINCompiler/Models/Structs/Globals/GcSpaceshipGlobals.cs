@@ -3,7 +3,7 @@
     public class GcSpaceshipGlobals : NMSTemplate
     {
         /* 0X0 */ public bool RollAndYawKeySwap;
-        /* 0X1 */ public bool Unknown1;
+        /* 0X1 */ public bool ThirdPersonCamera;
         /* 0X2 */ public bool Unknown2;
         /* 0X3 */ public bool Unknown3;
         /* 0X4 */ public bool Unknown4;
@@ -122,7 +122,7 @@
         /* 0X2B4 */ public float Unknown2B4;
         /* 0X2B8 */ public float Unknown2B8;
         /* 0X2BC */ public float Unknown2BC;
-        /* 0X2C0 */ public float Unknown2C0;
+        /* 0X2C0 */ public float ReverseBrakeAtmosphereBrakeEffect;
         /* 0X2C4 */ public float Unknown2C4;
         /* 0X2C8 */ public float Unknown2C8;
         /* 0X2CC */ public int UnknownInt2CC;

@@ -64,6 +64,7 @@
     <Compile Include="Models\Structs\GcMultiplayerGlobals.cs" />
     <Compile Include="Models\Structs\GcAtlasMonument.cs" />
     <Compile Include="Models\Structs\gctechnologytableEnum.cs" />
+    <Compile Include="Models\Structs\GcTerrainEditing.cs" />
     <Compile Include="Models\Structs\GcTerrainEditsBuffer.cs" />
     <Compile Include="Models\Structs\GcTerrainEdit.cs" />
     <Compile Include="Models\Structs\GcGeneratorUnitComponentData.cs" />
