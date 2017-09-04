@@ -200,7 +200,7 @@ namespace MBINCompiler.Models
                 //Console.WriteLine("Gk Hack: " + templateName + " Deserialized Value: " + field.Name + " value: " + field.GetValue(obj));
                 //Console.WriteLine($"{templateName} position: 0x{reader.BaseStream.Position:X}");
                 /*using (System.IO.StreamWriter file =
-                    new System.IO.StreamWriter(@"T:\mbincompiler_debug.txt", true))
+                    new System.IO.StreamWriter(@"D:\mbincompiler_debug.txt", true))
                 {
                     file.WriteLine(" Deserialized Value: " + field.Name + " value: " + field.GetValue(obj));
                     file.WriteLine($"{templateName} position: 0x{reader.BaseStream.Position:X}");
@@ -232,26 +232,32 @@ namespace MBINCompiler.Models
             var list = new List<NMSTemplate>();
             if (numTemplates > 0)
             {
-                Dictionary<long, string> templates = new Dictionary<long, string>();
+                //Dictionary<long, string> templates = new Dictionary<long, string>();
+                List < KeyValuePair < long, String >> templates = new List<KeyValuePair<long, String>>();
                 for (int i = 0; i < numTemplates; i++)
                 {
                     long nameOffset = reader.BaseStream.Position;
                     long templateOffset = reader.ReadInt64();
                     var name = reader.ReadString(Encoding.UTF8, 0x40, true);
+                    /*Console.WriteLine(name);
+                    Console.WriteLine(nameOffset);
+                    Console.WriteLine(templateOffset);
+                    Console.WriteLine(nameOffset + templateOffset);*/
+
                     if (templateOffset == 0)
                     {
                         // sometimes there are lists which have n values, but less than n actual structs in them. We replace the empty thing with EmptyNode
-                        templates.Add(nameOffset + templateOffset, "EmptyNode");
+                        templates.Add(new KeyValuePair<long, string>(nameOffset + templateOffset, "EmptyNode"));
                     }
                     else
                     {
-                        templates.Add(nameOffset + templateOffset, name);
+                        templates.Add(new KeyValuePair<long, string>(nameOffset + templateOffset, name));
                     }
                 }
 
                 long pos = reader.BaseStream.Position;
 
-                foreach (var templateInfo in templates)
+                foreach (KeyValuePair<long, string> templateInfo in templates)
                 {
                     reader.BaseStream.Position = templateInfo.Key;
                     var template = DeserializeBinaryTemplate(reader, templateInfo.Value);
@@ -302,10 +308,13 @@ namespace MBINCompiler.Models
             return list;
         }
 
-        public void SerializeValue(BinaryWriter writer, Type fieldType, object fieldData, NMSAttribute settings, FieldInfo field, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex, UInt32 listEnding = 0xAAAAAA01)
+        public void SerializeValue(BinaryWriter writer, Type fieldType, object fieldData, NMSAttribute settings, FieldInfo field, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex, int structLength = 0, UInt32 listEnding = 0xAAAAAA01)
         {
             if (CustomSerialize(writer, fieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex))
                 return;
+            //Console.WriteLine(fieldType.Name);
+            //Console.WriteLine("bloop");
+            //System.Threading.Thread.Sleep(200);
             switch (fieldType.Name)
             {
                 case "String":
@@ -387,19 +396,37 @@ namespace MBINCompiler.Models
                     }
 
                     break;
+                case "EmptyNode":
+                    break;
+
                 case "NMSTemplate":
                     writer.Align(8, 0);
                     long refPos = writer.BaseStream.Position;
-                    writer.Write((Int64)0); // listPosition
                     var template = (NMSTemplate)fieldData;
+                    //Console.WriteLine(template);
                     if (template == null || template.GetType().Name == "EmptyNode")
                     {
+                        writer.Write((Int64)0); // listPosition
                         writer.WriteString("", Encoding.UTF8, 0x40);
                     }
                     else
                     {
+                        writer.Write((Int64)structLength);      // so that it goes to the end of the struct
+                        // the above is not quite right...
+                        // we need the length - (location of the object in the struct)
                         writer.WriteString("c" + template.GetType().Name, Encoding.UTF8, 0x40);
-                        additionalData.Insert(addtDataIndex++, new Tuple<long, object>(refPos, template));
+                        //Console.WriteLine(addtDataIndex);
+                        //Console.WriteLine("bloop");
+                        //Console.WriteLine(template.GetType().Name);
+                        try
+                        {
+                            additionalData.Insert(addtDataIndex++, new Tuple<long, object>(refPos + structLength, template));
+                            //addtDataIndex;
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            additionalData.Add(new Tuple<long, object>(refPos + structLength, template));
+                        }
                     }
                     break;
                 case "Dictionary`2":
@@ -426,7 +453,7 @@ namespace MBINCompiler.Models
                         var arrayType = fieldType.GetElementType();
                         Array array = (Array)fieldData;
                         if (array == null)
-                            array = Array.CreateInstance(arrayType, settings.Size);
+                            array = Array.CreateInstance(arrayType, (int)settings.Size);
 
                         foreach (var obj in array)
                         {
@@ -463,19 +490,61 @@ namespace MBINCompiler.Models
             var type = GetType();
             var fields = type.GetFields().OrderBy(field => field.MetadataToken); // hack to get fields in order of declaration (todo: use something less hacky, this might break mono?)
 
+            int structLength;
+            try
+            {
+                structLength = type.GetCustomAttribute<NMSAttribute>().Size;
+            }
+            catch (NullReferenceException)
+            // In this case the class has no size associate with it, in which case we will just ignore it
+            {
+                structLength = 0;
+            }
+
             //Console.WriteLine(additionalData.LastOrDefault());
             //Console.WriteLine($"[C] writing {GetType().Name} to offset 0x{templatePosition:X}");
-            //System.Threading.Thread.Sleep(100);
+            //System.Threading.Thread.Sleep(1000);
+
+            // I think I need to add something like the offset stuff in the list serialisation
+            // then check for NMSTemplate types?
+
+
+            var entryOffsetNamePairs = new Dictionary<long, string>();
+            //List<KeyValuePair<long, String>> templates = new List<KeyValuePair<long, String>>();
+
             if (type.Name != "EmptyNode")
             {
                 foreach (var field in fields)
                 {
                     var fieldAddr = writer.BaseStream.Position - templatePosition;
                     var fieldData = field.GetValue(this);
-                    NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
-                    SerializeValue(writer, field.FieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex);
+                    if (field.FieldType.Name == "NMSTemplate")
+                    {
+                        //Console.WriteLine("hello");
+                        //Console.WriteLine(field);
+
+                        //System.Threading.Thread.Sleep(1000);
+                        //entryOffsetNamePairs.Add(writer.BaseStream.Position, field.GetType().Name);
+                        NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
+                        SerializeValue(writer, field.FieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex, structLength);// - (int)fieldAddr);
+
+                    }
+                    else
+                    {
+                        NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
+                        SerializeValue(writer, field.FieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex, structLength);
+                    }
                 }
             }
+            else
+            {
+                SerializeValue(writer, type, null, null, null, ref additionalData, ref addtDataIndex, structLength);
+            }
+            /*foreach (var entry in entryOffsetNamePairs)
+            {
+                var template = (NMSTemplate)entry.Value;
+                template.AppendToWriter(writer, ref listObjects, ref addtDataIndexThis, GetType());
+            }*/
         }
 
         public void SerializeGenericList(BinaryWriter writer, IList list, long listHeaderPosition, ref List<Tuple<long, object>> additionalData, int addtDataIndex, UInt32 listEnding)
@@ -492,7 +561,6 @@ namespace MBINCompiler.Models
             else
                 writer.Write((long)0); // lists with 0 entries have offset set to 0
 
-
             writer.Write((Int32)list.Count);
             writer.Write(listEnding);
 
@@ -503,38 +571,36 @@ namespace MBINCompiler.Models
             int addtDataIndexThis = 0;
 
             var entryOffsetNamePairs = new Dictionary<long, string>();
+            var listEntries = new List<long?>();
             foreach (var entry in list)
             {
                 int alignment;
                 try
                 {
-                    //Console.WriteLine("Dlist code");
                     alignment = entry.GetType().GetCustomAttribute<NMSAttribute>().Alignment;
-                    //Console.WriteLine(entry.GetType());
-                    //Console.WriteLine(alignment);
-                    //System.Threading.Thread.Sleep(100);
                 }
                 catch (NullReferenceException)
-                // In this case the class has no alignment value associated with it, just set as default value of 4
                 {
                     alignment = 0x8;
                 }
 
                 writer.Align(alignment, 0);
-                /*
-                if (entry.GetType().Name == "GcNGuiLayerData" || entry.GetType().Name == "GcNGuiTextData" || entry.GetType().Name == "GcNGuiGraphicData")
-                {
-                    writer.Align(0x10, 0);
-                }
-                else
-                {
-                    writer.Align(0x8, 0);
-                }*/
+
                 // add the starting location of the data chunk and the name to a dictionary
+                //Console.WriteLine(writer.BaseStream.Position);
+                //Console.WriteLine(entry.GetType().Name);
+                //System.Threading.Thread.Sleep(1000);
                 if (entry.GetType().Name != "EmptyNode")
                 {
                     entryOffsetNamePairs.Add(writer.BaseStream.Position, entry.GetType().Name);
+                    listEntries.Add(writer.BaseStream.Position);
                 }
+                else
+                {
+                    listEntries.Add(null);
+                }
+
+
                 var template = (NMSTemplate)entry;
                 var listObjects = new List <Tuple<long, object>>();     // new list of objects so that this data is serialised first
                 var addtData = new Dictionary<long, object>();
@@ -551,7 +617,14 @@ namespace MBINCompiler.Models
                     {
                         Type itemType = data.Item2.GetType().GetGenericArguments()[0];
                         if (itemType == typeof(NMSTemplate))
+                        {
+                            //var c = (IList)data.Item2;
+                            //Console.WriteLine("count");
+                            //Console.WriteLine(c.Count);
+                            //foreach (var val in (IList)data.Item2)
+                            //    Console.WriteLine(val);
                             SerializeGenericList(writer, (IList)data.Item2, data.Item1, ref listObjects, i + 1, listEnding);
+                        }
                         else
                         {
                             SerializeList(writer, (IList)data.Item2, data.Item1, ref listObjects, i + 1, listEnding);
@@ -572,17 +645,22 @@ namespace MBINCompiler.Models
             long dataEndOffset = writer.BaseStream.Position;
 
             writer.BaseStream.Position = listPosition;
-            foreach (var entry in entryOffsetNamePairs)
+            foreach (var val in listEntries)
             {
-                var position = writer.BaseStream.Position;
-                var offset = entry.Key - position; // get offset of this entry from the current offset
-                if (entry.Value != "EmptyNode")
+                // Iterate through the list headers and write the correct data
+                if (val != null)
                 {
+                    // in this case, we have an actual non-empty header.
+                    var entry = entryOffsetNamePairs[(long)val];
+                    var position = writer.BaseStream.Position;
+                    var offset = (long)val - position; // get offset of this entry from the current offset
                     writer.Write(offset);
-                    writer.WriteString("c" + entry.Value, Encoding.UTF8, 0x40);
+                    writer.WriteString("c" + entry, Encoding.UTF8, 0x40);
                 }
+
                 else
                 {
+                    // this is called when the header 0x48 bytes is empty because it is an empty node.
                     writer.WriteString("", Encoding.UTF8, 0x48);
                 }
             }
@@ -630,7 +708,8 @@ namespace MBINCompiler.Models
 
             foreach (var entry in list)
             {
-
+                //Console.WriteLine(entry.GetType());
+                //System.Threading.Thread.Sleep(1000);
                 if (PrintToDebug) Debug.WriteLine($"[C] writing {entry.GetType().Name} to offset 0x{writer.BaseStream.Position:X}");
                 SerializeValue(writer, entry.GetType(), entry, null, null, ref additionalData, ref addtDataIndexThis);
             }
@@ -639,8 +718,6 @@ namespace MBINCompiler.Models
             {
                 writer.Write(0xFEFEFEFEFEFEFEFE);
             }
-
-
         }
 
         public byte[] SerializeBytes()
@@ -708,6 +785,8 @@ namespace MBINCompiler.Models
                         var pos = writer.BaseStream.Position;
                         var template = (NMSTemplate)data.Item2;
                         int i2 = i + 1;
+                        //Console.WriteLine(template.GetType().Name);
+                        //System.Threading.Thread.Sleep(2000);
                         template.AppendToWriter(writer, ref additionalData, ref i2, GetType(), listEnding);
                         var endPos = writer.BaseStream.Position;
                         writer.BaseStream.Position = data.Item1;

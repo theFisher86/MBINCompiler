@@ -1,6 +1,5 @@
 ﻿namespace MBINCompiler.Models.Structs
 {
-    // loaded at 0x141624650
     public class GcGraphicsGlobals : NMSTemplate
     {
         public float Unknown;
@@ -163,20 +162,17 @@
         public float Unknown3F4;
         public float Unknown3F8;
         public float Unknown3FC;
-        public float Unknown400;
+        public float Unknown400;        // something here??
         public float Unknown404;
         public float Unknown408;
-        public bool Unknown40C;
-        public bool Unknown40D;
-        [NMS(Size = 0x2, Ignore = true)]
-        public byte[] Padding40E;
+        public float Unknown40C;
         public float Unknown410;
         public float Unknown414;
         public float Unknown418;
         public float Unknown41C;
-        public float Unknown420;
-        public float Unknown424;
-        public float Unknown428;
+        public float Unknown420;        // 'til maybe about here??
+        public bool Unknown424;
+        public bool Unknown428;
         public float Unknown42C;
         public float Unknown430;
         public float Unknown434;
@@ -242,22 +238,18 @@
         public float Unknown524;
         public float Unknown528;
         public float Unknown52C;
+        public float Unknown530;
+        public float Unknown534;
+        public float Unknown538;
+        public float Unknown53C;
+        public float Unknown540;
+        public float Unknown544;
+        public float Unknown548;
+        public float Unknown54C;
 
-        public GcPlanetWaterData Unknown530;
+        public GcPlanetWaterData Unknown550;
+        public GcPlanetWaterData Unknown710;
 
-        public GcPlanetWaterData Unknown6E0;
-
-        public float Unknown890;
-        public float Unknown894;
-        public float Unknown898;
-        public float Unknown89C;
-        public float Unknown8A0;
-        public float Unknown8A4;
-        public float Unknown8A8;
-        public bool Unknown8AC;
-        public bool Unknown8AD;
-        public bool Unknown8AE;
-        public bool Unknown8AF;
         public float Unknown8B0;
         public float Unknown8B4;
         public float Unknown8B8;
@@ -265,28 +257,42 @@
         public float Unknown8C0;
         public float Unknown8C4;
         public float Unknown8C8;
-        public float Unknown8CC;
+        public bool Unknown8CC;
+        public bool Unknown8CD;
+        public bool Unknown8CE;
+        public bool Unknown8CF;
         public float Unknown8D0;
-        public float Unknown8D4;
-        public float Unknown8D8;
-        public bool Unknown8DC;
-        public int UnknownInt8E0;
-        public int UnknownInt8E4;
-        public int UnknownInt8E8;
-        public int UnknownInt8EC;
-        public int UnknownInt8F0;
-        public bool Unknown8F4;
-        public bool Unknown8F5;
-        public bool Unknown8F6;
-        public bool Unused8F7;
-        public int UnknownInt8F8;
+        public bool Unknown8D4;
+        public bool Unknown8D5;
+        public bool Unknown8D6;
+        public bool Unknown8D7;
+        [NMS(Size = 0x8, Ignore = true)]
+        public byte[] Padding8D8;
+        public float Unknown8E0;
+        public float Unknown8E4;
+        public float Unknown8E8;
+        public float Unknown8EC;
+        public float Unknown8F0;
+        public float Unknown8F4;
+        public float Unknown8F8;
+        public bool Unknown8FC;
+        public int UnknownInt900;
+        public int UnknownInt904;
+        public int UnknownInt908;
+        public int UnknownInt90C;
+        public int UnknownInt910;
+        public bool Unknown914;
+        public bool Unknown915;
+        public bool Unknown916;
+        public bool Unknown917;
+        public int UnknownInt918;
 
-        public float Unknown8FC;
-        public float Unknown900;
-        public float Unknown904;
-        public float Unknown908;
-        public float Unknown90C;
-        public float Unknown910;
+        public float Unknown91C;
+        public float Unknown920;
+        public float Unknown924;
+        public float Unknown928;
+        public float Unknown92C;
+        public float Unknown930;
         [NMS(Size = 0xC, Ignore = true)]
         public byte[] EndPadding;
     }

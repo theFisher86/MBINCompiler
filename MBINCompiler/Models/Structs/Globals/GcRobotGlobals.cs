@@ -3,11 +3,10 @@
     public class GcRobotGlobals : NMSTemplate
     {
         public float Unknown0;
-        public bool Unknown4;
+        public float Unknown4;
         public float Unknown8;
         public float UnknownC;
-
-        public float Unknown10;
+        public bool Unknown10;
         public float Unknown14;
         public float Unknown18;
         public float Unknown1C;
@@ -15,24 +14,20 @@
         public float Unknown24;
         public float Unknown28;
         public float Unknown2C;
-
         public float Unknown30;
         public float Unknown34;
         public float Unknown38;
         public float Unknown3C;
-
         public float Unknown40;
         public float Unknown44;
         public float Unknown48;
-        public int UnknownInt4C;
-        public int UnknownInt50;
-        public int UnknownInt54;
+        public float Unknown4C;
+        public float Unknown50;
+        public float Unknown54;
         public int UnknownInt58;
-        public float Unknown5C;
-
-        // below chunk was all Vector4f's for some reason before. Didn't really seem to fit...
-        public float Unknown60;
-        public float Unknown64;
+        public int UnknownInt5C;
+        public int UnknownInt60;
+        public int UnknownInt64;
         public float Unknown68;
         public float Unknown6C;
         public float Unknown70;
@@ -67,16 +62,18 @@
         public float UnknownE4;
         public float UnknownE8;
         public float UnknownEC;
-
         public float UnknownF0;
         public float UnknownF4;
         public float UnknownF8;
+        public float UnknownFC;
+        public float Unknown100;
+        public float Unknown104;
+        public float Unknown108;
+        [NMS(Size = 0x4, Ignore = true)]
+        public byte[] Padding10C;
 
-        [NMS(Size = 4, Ignore = true)]
-        public byte[] PaddingFC;
-
-        /* 0x100 */ public GcRobotLaserData WalkerLaserData;
-        /* 0x150 */ public GcRobotLaserData QuadLaserData;
-        /* 0x1A0 */ public GcDroneData DroneData;
+        /* 0x110 */ public GcRobotLaserData WalkerLaserData;
+        /* 0x160 */ public GcRobotLaserData QuadLaserData;
+        /* 0x1B0 */ public GcDroneData DroneData;
     }
 }
