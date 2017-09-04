@@ -1,6 +1,10 @@
 ﻿namespace MBINCompiler.Models.Structs
 {
+<<<<<<< HEAD
     [NMS(Size = 0x94)]
+=======
+    [NMS(Size = 0x70)]
+>>>>>>> origin/master
     public class GcTerrainEditing : NMSTemplate
     {
         /* 0x0 */ public float EditPlaneMaxAdditiveOffsetFactor;
@@ -22,6 +26,7 @@
         /* 0x40 */ public float EditsFreeWithinBaseDistanceSqr;
         /* 0x44 */ public bool EditGunBeamEnabled;
         /* 0x45 */ public bool EditGunParticlesEnabled;
+<<<<<<< HEAD
         /* 0x46 */ public bool SubtractGunBeamEnabled;
         /* 0x47 */ public bool SubtractGunParticlesEnabled;
         [NMS(Size = 0x8)]
@@ -31,6 +36,12 @@
         [NMS(Size = 0x2)]
         /* 0x88 */ public float[] BaseEditSize;
         /* 0x90 */ public float EditEffectScale;
+=======
+        [NMS(Size = 0x8)]
+        /* 0x48 */ public float[] EditSizes;
+        [NMS(Size = 0x2)]
+        /* 0x68 */ public float[] BaseEditSize;
+>>>>>>> origin/master
 
     }
 }

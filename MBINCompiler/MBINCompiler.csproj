@@ -57,15 +57,21 @@
     <Compile Include="Models\Structs\GcBuildingOverrideData.cs" />
     <Compile Include="Models\Structs\GcObjectDefinitionData.cs" />
     <Compile Include="Models\Structs\GcObjectSpawnDataArray.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Structs\GcPlayerSpaceshipClassBonuses.cs" />
+=======
+>>>>>>> origin/master
     <Compile Include="Models\Structs\GcResourceOrigin.cs" />
     <Compile Include="Models\Structs\GcAtlasBase.cs" />
     <Compile Include="Models\Structs\GcAtlasSendSubmitMonument.cs" />
     <Compile Include="Models\Structs\GcInteractionDof.cs" />
     <Compile Include="Models\Structs\GcMultiplayerGlobals.cs" />
     <Compile Include="Models\Structs\GcAtlasMonument.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Structs\GcRewardMissionSeeded.cs" />
     <Compile Include="Models\Structs\GcRewardClosePortal.cs" />
+=======
+>>>>>>> origin/master
     <Compile Include="Models\Structs\gctechnologytableEnum.cs" />
     <Compile Include="Models\Structs\GcTerrainEditing.cs" />
     <Compile Include="Models\Structs\GcTerrainEditsBuffer.cs" />

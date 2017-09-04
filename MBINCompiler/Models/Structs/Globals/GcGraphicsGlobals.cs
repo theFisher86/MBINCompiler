@@ -165,7 +165,12 @@
         public float Unknown400;        // something here??
         public float Unknown404;
         public float Unknown408;
+<<<<<<< HEAD:MBINCompiler/Models/Structs/Globals/GcGraphicsGlobals.cs
         public float Unknown40C;
+=======
+        public bool Unknown40C;
+        public bool Unknown40D;
+>>>>>>> origin/master:MBINCompiler/Models/Structs/Globals/GcGraphicsGlobals.cs
         public float Unknown410;
         public float Unknown414;
         public float Unknown418;

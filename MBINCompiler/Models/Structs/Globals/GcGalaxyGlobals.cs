@@ -123,11 +123,19 @@ namespace MBINCompiler.Models.Structs
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xF5C */ public byte[] PaddingF5C;
         /* 0xF60 */ public GcGalaxyRenderSetupData UnknownF60;
+<<<<<<< HEAD
         /* 0x1170 */ public GcGalaxyGenerationSetupData Unknown1160;
         /* 0x12E0 */ public GcGalaxyRenderSetupData Unknown12D0;
         /* 0x14F0 */ public GcGalaxyGenerationSetupData Unknown14D0;
 
         /* 0X1660 */ public GcGalaxySolarSystemParams GalaxySolarSystemParams;
+=======
+        /* 0x1160 */ public GcGalaxyGenerationSetupData Unknown1160;
+        /* 0x12D0 */ public GcGalaxyRenderSetupData Unknown12D0;
+        /* 0x14D0 */ public GcGalaxyGenerationSetupData Unknown14D0;
+
+        /* 0X1640 */ public GcGalaxySolarSystemParams GalaxySolarSystemParams;
+>>>>>>> origin/master
         [NMS(Size = 0x8, Ignore = true)]
         public byte[] EndPadding;
     }
