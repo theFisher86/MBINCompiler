@@ -508,13 +508,9 @@ namespace MBINCompiler.Models
             // I think I need to add something like the offset stuff in the list serialisation
             // then check for NMSTemplate types?
 
-<<<<<<< HEAD
 
             var entryOffsetNamePairs = new Dictionary<long, string>();
             //List<KeyValuePair<long, String>> templates = new List<KeyValuePair<long, String>>();
-=======
-            var entryOffsetNamePairs = new Dictionary<long, string>();
->>>>>>> origin/master
 
             if (type.Name != "EmptyNode")
             {

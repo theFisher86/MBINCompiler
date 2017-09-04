@@ -101,20 +101,12 @@
         /* 0x170 */ public float Unknown170;
         /* 0x174 */ public float Unknown174;
         /* 0x178 */ public float Unknown178;
-<<<<<<< HEAD:MBINCompiler/Models/Structs/Globals/GcSolarGenerationGlobals.cs
         /* 0x17C */ public int ShipVariationsPerSystem;
-=======
-        /* 0x17C */ public int UnknownInt17C;
->>>>>>> origin/master:MBINCompiler/Models/Structs/Globals/GcSolarGenerationGlobals.cs
         /* 0x180 */ public float Unknown180;
         /* 0x184 */ public float Unknown184;
         /* 0x188 */ public float Unknown188;
 
-<<<<<<< HEAD:MBINCompiler/Models/Structs/Globals/GcSolarGenerationGlobals.cs
         [NMS(Size = 0x7)]
-=======
-        [NMS(Size = 0x7, EnumValue = new string[0x7] { "Standard", "Freighter", "CapitalFreighter", "SmallFreighter", "TinyFreighter", "Unknown1", "Unknown2" })]
->>>>>>> origin/master:MBINCompiler/Models/Structs/Globals/GcSolarGenerationGlobals.cs
         /* 0x18C */ public GcAISpaceshipWeightingData[] Unknown18C;
     }
 }

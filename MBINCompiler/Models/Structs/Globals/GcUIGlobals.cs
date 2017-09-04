@@ -1,946 +1,1030 @@
-// generated output for subroutine:
-// signed __int64 __fastcall raw_GcUIGlobals(__int64 a1) -----> hash: 21D52E2
-// hash of whole input: 8AEA2A75
-
 namespace MBINCompiler.Models.Structs
 {
-    public class GcUIGlobals : NMSTemplate // 0x3DE0
+    public class GcUIGlobals : NMSTemplate
     {
-        public bool Unknown0;
-        public float Unknown4;
-        public float Unknown8;
-        public float UnknownC;
-        public float Unknown10;
-        public float Unknown14;
-        public float Unknown18;
-        public float Unknown1C;
-        public float Unknown20;
-        public float Unknown24;
-        public float Unknown28;
-        public float Unknown2C;
-        public float Unknown30;
-        public float Unknown34;
-        public float Unknown38;
-        public float Unknown3C;
-        public float Unknown40;
-        public float Unknown44;
-        public float Unknown48;
-        public float Unknown4C;
-        public float Unknown50;
-        public float Unknown54;
-        public float Unknown58;
-        public float Unknown5C;
-        public float Unknown60;
-        public float Unknown64;
-        public float Unknown68;
-        public int UnknownInt6C;
-        public float Unknown70;
-        public float Unknown74;
-        public float Unknown78;
-        public float Unknown7C;
-        public float Unknown80;
-        public float Unknown84;
-        public float Unknown88;
-        public float Unknown8C;
-        public float Unknown90;
-        public float Unknown94;
-        public float Unknown98;
-        public float Unknown9C;
-        public float UnknownA0;
-        public float UnknownA4;
-        public float UnknownA8;
-        public float UnknownAC;
-        public float UnknownB0;
-        public float UnknownB4;
-        public int UnknownIntB8;
-        public float UnknownBC;
-        public float UnknownC0;
-        public float UnknownC4;
-        public float UnknownC8;
-        public float UnknownCC;
-        public float UnknownD0;
-        public float UnknownD4;
-        public float UnknownD8;
-        public float UnknownDC;
-        public float UnknownE0;
-        public float UnknownE4;
-        public float UnknownE8;
-        public float UnknownEC;
-        public int UnknownIntF0;
-        public float UnknownF4;
-        public float UnknownF8;
-        public float UnknownFC;
-        public float Unknown100;
-        public float Unknown104;
-        public float Unknown108;
-        public float Unknown10C;
-        public float Unknown110;
-        public float Unknown114;
-        public float Unknown118;
-        public int UnknownInt11C;
-        public float Unknown120;
-        public float Unknown124;
-        public float Unknown128;
-        public float Unknown12C;
-        public float Unknown130;
-        public float Unknown134;
-        public float Unknown138;
-        public float Unknown13C;
-        public float Unknown140;
-        public float Unknown144;
-        public float Unknown148;
-        public float Unknown14C;
-        public float Unknown150;
-        public float Unknown154;
-        public float Unknown158;
-        public float Unknown15C;
-        public float Unknown160;
-        public float Unknown164;
-        public float Unknown168;
-        public float Unknown16C;
-        public float Unknown170;
-        public int UnknownInt174;
-        public float Unknown178;
-        public float Unknown17C;
-        public float Unknown180;
-        public int UnknownInt184;
-        public float PlanetScanTime;
-        public float Unknown18C;
-        public float Unknown190;
-        public float Unknown194;
-        public float Unknown198;
-        public float Unknown19C;
-        public float Unknown1A0;
-        public float Unknown1A4;
-        public float Unknown1A8;
-        public float Unknown1AC;
-        public float Unknown1B0;
-        public float Unknown1B4;
-        public float Unknown1B8;
-        public float Unknown1BC;
-        public float Unknown1C0;
-        public float Unknown1C4;
-        public float Unknown1C8;
-        public float Unknown1CC;
-        public int UnknownInt1D0;
-        public float Unknown1D4;
-        public float Unknown1D8;
-        public float Unknown1DC;
-        public float Unknown1E0;
-        public float Unknown1E4;
-        public float Unknown1E8;
-        public float Unknown1EC;
-        public float Unknown1F0;
-        public float Unknown1F4;
-        public float Unknown1F8;
-        public float Unknown1FC;
-        public float Unknown200;
-        public float Unknown204;
-        public float Unknown208;
-        public float Unknown20C;
-        public float Unknown210;
-        public float Unknown214;
-        public float Unknown218;
-        public float Unknown21C;
-        public float Unknown220;
-        public float Unknown224;
-        public float Unknown228;
-        public float Unknown22C;
-        public int UnknownInt230;
-        public float Unknown234;
-        public float Unknown238;
-        public float Unknown23C;
-        public float Unknown240;
-        public float Unknown244;
-        public float Unknown248;
-        public float Unknown24C;
-        public float Unknown250;
-        public float Unknown254;
-        public int UnknownInt258;
-        public int UnknownInt25C;
-        public float Unknown260;
-        public float Unknown264;
-        public int UnknownInt268;
-        public int UnknownInt26C;
-        public int UnknownInt270;
-        public float Unknown274;
-        public float Unknown278;
-        public float Unknown27C;
-        public float Unknown280;
-        public float Unknown284;
-        public float Unknown288;
-        public float Unknown28C;
-        public float Unknown290;
-        public float Unknown294;
-        public float Unknown298;
-        public float Unknown29C;
-        public float Unknown2A0;
-        public int UnknownInt2A4;
-        public float Unknown2A8;
-        public float Unknown2AC;
-        public float Unknown2B0;
-        public float Unknown2B4;
-        public float Unknown2B8;
-        public float Unknown2BC;
-        public float Unknown2C0;
-        public float Unknown2C4;
-        public float Unknown2C8;
-        public float Unknown2CC;
-        public float Unknown2D0;
-        public float Unknown2D4;
-        public float Unknown2D8;
-        public float Unknown2DC;
-        public float Unknown2E0;
-        public float Unknown2E4;
-        public float Unknown2E8;
-        public float Unknown2EC;
-        public float Unknown2F0;
-        public float Unknown2F4;
-        public float Unknown2F8;
-        public float Unknown2FC;
-        public float Unknown300;
-        public float Unknown304;
-        public int UnknownInt308;
-        public int UnknownInt30C;
-        public float Unknown310;
-        public float Unknown314;
-        public float Unknown318;
-        public float Unknown31C;
-        public float Unknown320;
-        public float Unknown324;
-        public float Unknown328;
-        public float Unknown32C;
-        public float Unknown330;
-        public float Unknown334;
-        public float Unknown338;
-        public float Unknown33C;
-        public float Unknown340;
-        public float Unknown344;
-        public float Unknown348;
-        public float Unknown34C;
-        public float Unknown350;
-        public float Unknown354;
-        public float Unknown358;
-        public float Unknown35C;
-        public float Unknown360;
-        public float Unknown364;
-        public float Unknown368;
-        public float Unknown36C;
-        public float Unknown370;
-        public float Unknown374;
-        public float Unknown378;
-        public TkNGuiRectanglePulseEffect Unknown37C;
-        public TkNGuiRectanglePulseEffect Unknown390;
-        public float Unknown3A4;
-        public float Unknown3A8;
-        public float Unknown3AC;
-        public float Unknown3B0;
-        public float Unknown3B4;
-        public float Unknown3B8;
-        public float Unknown3BC;
-        public float Unknown3C0;
-        public float Unknown3C4;
-        public float Unknown3C8;
-        public float Unknown3CC;
-        public float Unknown3D0;
-        public float Unknown3D4;
-        public int UnknownInt3D8;
-        public bool Unknown3DC;
-        public float Unknown3E0;
-        public float Unknown3E4;
-        public float Unknown3E8;
-        public float Unknown3EC;
-        public float Unknown3F0;
-        public float Unknown3F4;
-        public float Unknown3F8;
-        public float Unknown3FC;
-        public float Unknown400;
-        public float Unknown404;
-        public float Unknown408;
-        public float Unknown40C;
-        public float Unknown410;
-        public float Unknown414;
-        public float Unknown418;
-        public float Unknown41C;
-        public float Unknown420;
-        public float Unknown424;
-        public float Unknown428;
-        public float Unknown42C;
-        public float Unknown430;
-        public float Unknown434;
-        public float Unknown438;
-        public float Unknown43C;
-        public float Unknown440;
-        public float Unknown444;
-        public float Unknown448;
-        public float Unknown44C;
-        public float Unknown450;
-        public float Unknown454;
-        public float Unknown458;
-        public float Unknown45C;
-        public float Unknown460;
-        public float Unknown464;
-        public float Unknown468;
-        public float Unknown46C;
-        public float Unknown470;
-        public float Unknown474;
-        public float Unknown478;
-        public float Unknown47C;
-        public float Unknown480;
-        public float Unknown484;
-        public float Unknown488;
-        public float Unknown48C;
-        public float Unknown490;
-        public float Unknown494;
-        public float Unknown498;
-        public float Unknown49C;
-        public float Unknown4A0;
-
-        [NMS(Size = 0x80)]
-        public string Unknown4A4;
-        [NMS(Size = 0x80)]
-        public string Unknown524;
-        [NMS(Size = 0x80)]
-        public string Unknown5A4;
-        [NMS(Size = 0x80)]
-        public string Unknown624;
-        [NMS(Size = 0x80)]
-        public string Unknown6A4;
-        [NMS(Size = 0x80)]
-        public string Unknown724;
-        [NMS(Size = 0x80)]
-        public string Unknown7A4;
-        [NMS(Size = 0x80)]
-        public string Unknown824;
-        [NMS(Size = 0x80)]
-        public string Unknown8A4;
-        [NMS(Size = 0x80)]
-        public string Unknown924;
-        [NMS(Size = 0x80)]
-        public string Unknown9A4;
-        [NMS(Size = 0x80)]
-        public string UnknownA24;
-        [NMS(Size = 0x80)]
-        public string UnknownAA4;
-        [NMS(Size = 0x80)]
-        public string UnknownB24;
-        [NMS(Size = 0x80)]
-        public string UnknownBA4;
-        [NMS(Size = 0x80)]
-        public string UnknownC24;
-        [NMS(Size = 0x80)]
-        public string UnknownCA4;
-        [NMS(Size = 0x80)]
-        public string UnknownD24;
-        [NMS(Size = 0x80)]
-        public string UnknownDA4;
-        [NMS(Size = 0x80)]
-        public string UnknownE24;
-        [NMS(Size = 0x80)]
-        public string UnknownEA4;
-        [NMS(Size = 0x80)]
-        public string UnknownF24;
-        [NMS(Size = 0x80)]
-        public string UnknownFA4;
-        [NMS(Size = 0x80)]
-        public string Unknown1024;
-        [NMS(Size = 0x80)]
-        public string Unknown10A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1124;
-        [NMS(Size = 0x80)]
-        public string Unknown11A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1224;
-        [NMS(Size = 0x80)]
-        public string Unknown12A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1324;
-        [NMS(Size = 0x80)]
-        public string Unknown13A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1424;
-        [NMS(Size = 0x80)]
-        public string Unknown14A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1524;
-        [NMS(Size = 0x80)]
-        public string Unknown15A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1624;
-        [NMS(Size = 0x80)]
-        public string Unknown16A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1724;
-        [NMS(Size = 0x80)]
-        public string Unknown17A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1824;
-        [NMS(Size = 0x80)]
-        public string Unknown18A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1924;
-        [NMS(Size = 0x80)]
-        public string Unknown19A4;
-        [NMS(Size = 0x80)]
-        public string Unknown1A24;
-        [NMS(Size = 0x80)]
-        public string Unknown1AA4;
-        [NMS(Size = 0x80)]
-        public string Unknown1B24;
-        [NMS(Size = 0x80)]
-        public string Unknown1BA4;
-        [NMS(Size = 0x80)]
-        public string Unknown1C24;
-        [NMS(Size = 0x80)]
-        public string Unknown1CA4;
-        [NMS(Size = 0x80)]
-        public string Unknown1D24;
-        [NMS(Size = 0x80)]
-        public string Unknown1DA4;
-        [NMS(Size = 0x80)]
-        public string Unknown1E24;
-        [NMS(Size = 0x80)]
-        public string Unknown1EA4;
-        [NMS(Size = 0x80)]
-        public string Unknown1F24;
-        [NMS(Size = 0x80)]
-        public string Unknown1FA4;
-
-        public float Unknown2024;
-        public int UnknownInt2028;
-        public float Unknown202C;
-        public float Unknown2030;
-        public float Unknown2034;
-        public float Unknown2038;
-        public float Unknown203C;
-        public float Unknown2040;
-        public float Unknown2044;
-        public float Unknown2048;
-        public float Unknown204C;
-        public float Unknown2050;
-        public float Unknown2054;
-        public float Unknown2058;
-        public float Unknown205C;
-        public float Unknown2060;
-        public float Unknown2064;
-        public float Unknown2068;
-        public float Unknown206C;
-        public float Unknown2070;
-        public float Unknown2074;
-        public float Unknown2078;
-        public float Unknown207C;
-        public float Unknown2080;
-        public float Unknown2084;
-        public float Unknown2088;
-        public float Unknown208C;
-        public float Unknown2090;
-        public float Unknown2094;
-        public float Unknown2098;
-        public float Unknown209C;
-        public float Unknown20A0;
-        public float Unknown20A4;
-        public float Unknown20A8;
-        public float Unknown20AC;
-        public float Unknown20B0;
-        public float Unknown20B4;
-        public float Unknown20B8;
-        public float Unknown20BC;
-        public float Unknown20C0;
-        public float Unknown20C4;
-        public float Unknown20C8;
-        public float Unknown20CC;
-        public float Unknown20D0;
-        public float Unknown20D4;
-        public float Unknown20D8;
-        public float Unknown20DC;
-
+        /* 0x0 */ public bool Unknown0;
+        /* 0x1 */ public bool Unknown1;
+        /* 0x4 */ public float Unknown4;
+        /* 0x8 */ public float Unknown8;
+        /* 0xC */ public float UnknownC;
+        /* 0X10 */ public int UnknownInt10;
+        /* 0X14 */ public int UnknownInt14;
+        /* 0X18 */ public int UnknownInt18;
         [NMS(Size = 0x20)]
-        public string Unknown20E0;
-
-        public float Unknown2100;
-        public float Unknown2104;
-        public float Unknown2108;
-        public float Unknown210C;
-        public float Unknown2110;
-        public float Unknown2114;
-        public float Unknown2118;
-        public float Unknown211C;
-        public float Unknown2120;
-        public float Unknown2124;
-        public float Unknown2128;
-        public float Unknown212C;
-        public float Unknown2130;
-        public float Unknown2134;
-        public float Unknown2138;
-        public float Unknown213C;
-        public float Unknown2140;
-        public float Unknown2144;
-        public float Unknown2148;
-        public float Unknown214C;
-        public float Unknown2150;
-        public float Unknown2154;
-        public float Unknown2158;
-        public float Unknown215C;
-        public float Unknown2160;
-        public float Unknown2164;
-        public float Unknown2168;
-        public float Unknown216C;
-        public float Unknown2170;
-        public float Unknown2174;
-        public float Unknown2178;
-        public float Unknown217C;
-        public float Unknown2180;
-        public float Unknown2184;
-        public float Unknown2188;
-        public float Unknown218C;
-        public float Unknown2190;
-        public float Unknown2194;
-        public float Unknown2198;
-        public float Unknown219C;
-        public float Unknown21A0;
-        public float Unknown21A4;
-        public float Unknown21A8;
-        public float Unknown21AC;
-        public float Unknown21B0;
-        public float Unknown21B4;
-        public float Unknown21B8;
-        public float Unknown21BC;
-        public float Unknown21C0;
-        public float Unknown21C4;
-        public float Unknown21C8;
-        public float Unknown21CC;
-        public float Unknown21D0;
-        public int UnknownInt21D4;
-        public float Unknown21D8;
-        public float Unknown21DC;
-        public float Unknown21E0;
-        public float Unknown21E4;
-        public float Unknown21E8;
-        public float Unknown21EC;
-        public float Unknown21F0;
-        public float Unknown21F4;
-        public float Unknown21F8;
-        public float Unknown21FC;
-        public float Unknown2200;
-        public float Unknown2204;
-        public float Unknown2208;
-        public float Unknown220C;
-        public float Unknown2210;
-        public float Unknown2214;
-        public float Unknown2218;
-        public float Unknown221C;
-        public float Unknown2220;
-        public float Unknown2224;
-        public float Unknown2228;
-        public float Unknown222C;
-
-        public bool Unknown2230;
-        public bool Unknown2231;
-        public bool Unknown2232;
-
+        /* 0x1C */ public string Unknown1C;     // string is '...'
+        /* 0x3C */ public int UnknownInt3C;
         [NMS(Size = 0x20)]
-        public string Unknown2233;
-        [NMS(Size = 0x20)]
-        public string Unknown2253;
-        [NMS(Size = 0x1, Ignore = true)]
-        public byte[] Padding2273;
+        /* 0x40 */ public string Unknown40;     // string is '...'
 
-        public float Unknown2274;
-        public float Unknown2278;
-        public float Unknown227C;
-        public float Unknown2280;
-        public float Unknown2284;
-        public float Unknown2288;
-        public float Unknown228C;
-        public float Unknown2290;
-        public float Unknown2294;
-        public float Unknown2298;
-        public float Unknown229C;
-        public float Unknown22A0;
-        public float Unknown22A4;
+        /* 0X60 */ public float Unknown60;
+        /* 0X64 */ public float Unknown64;
+        /* 0X68 */ public bool Unknown68;
+        /* 0X6C */ public float Unknown6C;
+        /* 0X70 */ public float Unknown70;
+        /* 0X74 */ public float Unknown74;
+        /* 0X78 */ public float Unknown78;
+        /* 0X7C */ public float Unknown7C;
+        /* 0X80 */ public float Unknown80;
+        /* 0X84 */ public float Unknown84;
+        /* 0X88 */ public float Unknown88;
+        /* 0X8C */ public float Unknown8C;
+        /* 0X90 */ public float Unknown90;
+        /* 0X94 */ public float Unknown94;
+        /* 0X98 */ public float Unknown98;
+        /* 0X9C */ public float Unknown9C;
+        /* 0XA0 */ public float UnknownA0;
+        /* 0XA4 */ public float UnknownA4;
+        /* 0XA8 */ public float UnknownA8;
+        /* 0XAC */ public float UnknownAC;
+        /* 0XB0 */ public float UnknownB0;
+        /* 0XB4 */ public float UnknownB4;
+        /* 0XB8 */ public float UnknownB8;
+        /* 0XBC */ public float UnknownBC;
+        /* 0XC0 */ public float UnknownC0;
+        /* 0XC4 */ public float UnknownC4;
+        /* 0XC8 */ public float UnknownC8;
+        /* 0XCC */ public float UnknownCC;
+        /* 0XD0 */ public float UnknownD0;
+        /* 0XD4 */ public float UnknownD4;
+        /* 0XD8 */ public float UnknownD8;
+        /* 0XDC */ public float UnknownDC;
+        /* 0XE0 */ public float UnknownE0;
+        /* 0XE4 */ public float UnknownE4;
+        /* 0XE8 */ public float UnknownE8;
+        /* 0XEC */ public float UnknownEC;
+        /* 0XF0 */ public int UnknownIntF0;
+        /* 0XF4 */ public int UnknownIntF4;
+        /* 0XF8 */ public int UnknownIntF8;
+        /* 0XFC */ public float UnknownFC;
+        /* 0X100 */ public float Unknown100;
+        /* 0X104 */ public float Unknown104;
+        /* 0X108 */ public float Unknown108;
+        /* 0X10C */ public float Unknown10C;
+        /* 0X110 */ public float Unknown110;
+        /* 0X114 */ public float Unknown114;
+        /* 0X118 */ public float Unknown118;
+        /* 0X11C */ public float Unknown11C;
+        /* 0X120 */ public float Unknown120;
+        /* 0X124 */ public float Unknown124;
+        /* 0X128 */ public float Unknown128;
+        /* 0X12C */ public float Unknown12C;
+        /* 0X130 */ public float Unknown130;
+        [NMS(Size = 0xC, Ignore = true)]
+        /* 0x134 */ public byte[] Padding134;
+        /* 0x140 */ public GcScanEffectData Unknown140;
+        /* 0x190 */ public bool Unknown190;
+        /* 0X194 */ public float Unknown194;
+        /* 0X198 */ public float Unknown198;
+        /* 0X19C */ public float Unknown19C;
+        /* 0X1A0 */ public float Unknown1A0;
+        /* 0X1A4 */ public float Unknown1A4;
+        /* 0X1A8 */ public float Unknown1A8;
+        /* 0X1AC */ public float Unknown1AC;
+        /* 0X1B0 */ public float Unknown1B0;
+        /* 0X1B4 */ public float Unknown1B4;
+        /* 0X1B8 */ public float Unknown1B8;
+        /* 0X1BC */ public float Unknown1BC;
+        /* 0X1C0 */ public float Unknown1C0;
+        /* 0X1C4 */ public float Unknown1C4;
+        /* 0X1C8 */ public float Unknown1C8;
+        /* 0X1CC */ public float Unknown1CC;
+        /* 0x1D0 */ public bool Unknown1D0;
+        [NMS(Size = 0xF, Ignore = true)]
+        /* 0x1E0 */ public GcScanEffectData Unknown1E0;
+        /* 0x230 */ public bool Unknown230;
+        /* 0X234 */ public float Unknown234;
+        /* 0X238 */ public float Unknown238;
+        /* 0X23C */ public float Unknown23C;
+        /* 0X240 */ public float Unknown240;
+        /* 0X244 */ public float Unknown244;
+        /* 0X248 */ public float Unknown248;
+        /* 0X24C */ public float Unknown24C;
+        /* 0X250 */ public float Unknown250;
+        /* 0X254 */ public float Unknown254;
+        /* 0X258 */ public float Unknown258;
+        /* 0X25C */ public float Unknown25C;
+        /* 0X260 */ public float Unknown260;
+        /* 0X264 */ public float Unknown264;
+        /* 0X268 */ public float Unknown268;
+        /* 0X26C */ public float Unknown26C;
+        /* 0X270 */ public float Unknown270;
+        /* 0X274 */ public float Unknown274;
+        /* 0X278 */ public float Unknown278;
+        /* 0X27C */ public float Unknown27C;
+        /* 0X280 */ public float Unknown280;
+        /* 0X284 */ public float Unknown284;
+        /* 0X288 */ public float Unknown288;
+        /* 0X28C */ public float Unknown28C;
+        /* 0X290 */ public float Unknown290;
+        /* 0X294 */ public float Unknown294;
+        /* 0X298 */ public float Unknown298;
+        /* 0X29C */ public float Unknown29C;
+        /* 0X2A0 */ public float Unknown2A0;
+        /* 0X2A4 */ public float Unknown2A4;
+        /* 0X2A8 */ public float Unknown2A8;
+        /* 0X2AC */ public float Unknown2AC;
+        /* 0X2B0 */ public float Unknown2B0;
+        /* 0X2B4 */ public float Unknown2B4;
+        /* 0X2B8 */ public float Unknown2B8;
+        /* 0X2BC */ public float Unknown2BC;
+        /* 0X2C0 */ public float Unknown2C0;
+        /* 0X2C4 */ public float Unknown2C4;
+        /* 0X2C8 */ public int UnknownInt2C8;
+        /* 0X2CC */ public float Unknown2CC;
+        /* 0X2D0 */ public float Unknown2D0;
+        /* 0X2D4 */ public float Unknown2D4;
+        /* 0X2D8 */ public float Unknown2D8;
+        /* 0X2DC */ public float Unknown2DC;
+        /* 0X2E0 */ public float Unknown2E0;
+        /* 0X2E4 */ public float Unknown2E4;
+        /* 0X2E8 */ public float Unknown2E8;
+        /* 0X2EC */ public float Unknown2EC;
+        /* 0X2F0 */ public float Unknown2F0;
+        /* 0X2F4 */ public float Unknown2F4;
+        /* 0X2F8 */ public float Unknown2F8;
+        /* 0X2FC */ public float Unknown2FC;
+        /* 0X300 */ public float Unknown300;
+        /* 0X304 */ public float Unknown304;
+        /* 0X308 */ public float Unknown308;
+        /* 0X30C */ public float Unknown30C;
+        /* 0X310 */ public float Unknown310;
+        /* 0X314 */ public float Unknown314;
+        /* 0X318 */ public int UnknownInt318;
+        /* 0X31C */ public float Unknown31C;
+        /* 0X320 */ public float Unknown320;
+        /* 0X324 */ public float Unknown324;
+        /* 0X328 */ public float Unknown328;
+        /* 0X32C */ public float Unknown32C;
+        /* 0X330 */ public float Unknown330;
+        /* 0X334 */ public float Unknown334;
+        /* 0X338 */ public float Unknown338;
+        /* 0X33C */ public float Unknown33C;
+        /* 0X340 */ public float Unknown340;
+        [NMS(Size = 0xC, Ignore = true)]
+        /* 0x344 */ public byte[] Padding344;
+        /* 0x350 */ public GcScanEffectData Unknown350;
+
+        /* 0X3A0 */ public float Unknown3A0;
+        /* 0X3A4 */ public float Unknown3A4;
+        /* 0X3A8 */ public float Unknown3A8;
+        /* 0X3AC */ public float Unknown3AC;
+        /* 0X3B0 */ public float Unknown3B0;
+        /* 0X3B4 */ public float Unknown3B4;
+        /* 0X3B8 */ public float Unknown3B8;
+        /* 0X3BC */ public float Unknown3BC;
+        /* 0X3C0 */ public float Unknown3C0;
+        /* 0X3C4 */ public float Unknown3C4;
+        /* 0X3C8 */ public float Unknown3C8;
+        /* 0X3CC */ public float Unknown3CC;
+        /* 0X3D0 */ public float Unknown3D0;
+        /* 0X3D4 */ public float Unknown3D4;
+        /* 0X3D8 */ public float Unknown3D8;
+        /* 0X3DC */ public float Unknown3DC;
+        /* 0X3E0 */ public float Unknown3E0;
+        /* 0X3E4 */ public float Unknown3E4;
+        /* 0X3E8 */ public int UnknownInt3E8;
+        /* 0X3EC */ public float PlanetScanTime;
+        /* 0X3F0 */ public float Unknown3F0;
+        /* 0X3F4 */ public float Unknown3F4;
+        /* 0X3F8 */ public int UnknownInt3F8;
+        /* 0X3FC */ public float Unknown3FC;
+        /* 0X400 */ public float Unknown400;
+        /* 0X404 */ public float Unknown404;
+        /* 0X408 */ public float Unknown408;
+        /* 0X40C */ public float Unknown40C;
+        /* 0X410 */ public float Unknown410;
+        /* 0X414 */ public float Unknown414;
+        /* 0X418 */ public float Unknown418;
+        /* 0X41C */ public float Unknown41C;
+        /* 0X420 */ public float Unknown420;
+        /* 0X424 */ public float Unknown424;
+        /* 0X428 */ public float Unknown428;
+        /* 0X42C */ public float Unknown42C;
+        /* 0X430 */ public float Unknown430;
+        /* 0X434 */ public float Unknown434;
+        /* 0X438 */ public float Unknown438;
+        /* 0X43C */ public float Unknown43C;
+        /* 0X440 */ public float Unknown440;
+        /* 0X444 */ public int UnknownInt444;
+        /* 0X448 */ public float Unknown448;
+        /* 0X44C */ public float Unknown44C;
+        /* 0X450 */ public float Unknown450;
+        /* 0X454 */ public float Unknown454;
+        /* 0X458 */ public float Unknown458;
+        /* 0X45C */ public float Unknown45C;
+        /* 0X460 */ public float Unknown460;
+        /* 0X464 */ public float Unknown464;
+        /* 0X468 */ public float Unknown468;
+        /* 0X46C */ public float Unknown46C;
+        /* 0X470 */ public float Unknown470;
+        /* 0X474 */ public float Unknown474;
+        /* 0X478 */ public float Unknown478;
+        /* 0X47C */ public float Unknown47C;
+        /* 0X480 */ public float Unknown480;
+        /* 0X484 */ public float Unknown484;
+        /* 0X488 */ public float Unknown488;
+        /* 0X48C */ public float Unknown48C;
+        /* 0X490 */ public float Unknown490;
+        /* 0X494 */ public float Unknown494;
+        /* 0X498 */ public float Unknown498;
+        /* 0X49C */ public float Unknown49C;
+        /* 0X4A0 */ public int UnknownInt4A0;
+        /* 0X4A4 */ public float Unknown4A4;
+        /* 0X4A8 */ public float Unknown4A8;
+        /* 0X4AC */ public float Unknown4AC;
+        /* 0X4B0 */ public float Unknown4B0;
+        /* 0X4B4 */ public float Unknown4B4;
+        /* 0X4B8 */ public float Unknown4B8;
+        /* 0X4BC */ public float Unknown4BC;
+
+        /* 0X4C0 */ public float Unknown4C0;        // these 0x10 bytes are the same in 0x10. struct repeated 2x?
+        /* 0X4C4 */ public float Unknown4C4;
+        /* 0X4C8 */ public int UnknownInt4C8;
+        /* 0X4CC */ public int UnknownInt4CC;
+
+        /* 0X4D0 */ public float Unknown4D0;
+        /* 0X4D4 */ public float Unknown4D4;
+        /* 0X4D8 */ public int UnknownInt4D8;
+        /* 0X4DC */ public int UnknownInt4DC;
+
+        /* 0X4E0 */ public int UnknownInt4E0;
+        /* 0X4E4 */ public float Unknown4E4;
+        /* 0X4E8 */ public float Unknown4E8;
+        /* 0X4EC */ public float Unknown4EC;
+        /* 0X4F0 */ public float Unknown4F0;
+        /* 0X4F4 */ public float Unknown4F4;
+        /* 0X4F8 */ public float Unknown4F8;
+        /* 0X4FC */ public float Unknown4FC;
+        /* 0X500 */ public float Unknown500;
+        /* 0X504 */ public float Unknown504;
+        /* 0X508 */ public float Unknown508;
+        /* 0X50C */ public float Unknown50C;
+        /* 0X510 */ public float Unknown510;
+        /* 0X514 */ public int UnknownInt514;
+        /* 0X518 */ public float Unknown518;
+        /* 0X51C */ public float Unknown51C;
+        /* 0X520 */ public float Unknown520;
+        /* 0X524 */ public float Unknown524;
+        /* 0X528 */ public float Unknown528;
+        /* 0X52C */ public float Unknown52C;
+        /* 0X530 */ public float Unknown530;
+        /* 0X534 */ public float Unknown534;
+        /* 0X538 */ public float Unknown538;
+        /* 0X53C */ public float Unknown53C;
+        /* 0X540 */ public float Unknown540;
+        /* 0X544 */ public float Unknown544;
+        /* 0X548 */ public float Unknown548;
+        /* 0X54C */ public float Unknown54C;
+        /* 0X550 */ public float Unknown550;
+        /* 0X554 */ public float Unknown554;
+        /* 0X558 */ public float Unknown558;
+        /* 0X55C */ public float Unknown55C;
+        /* 0X560 */ public float Unknown560;
+        /* 0X564 */ public float Unknown564;
+        /* 0X568 */ public float Unknown568;
+        /* 0X56C */ public float Unknown56C;
+        /* 0X570 */ public float Unknown570;
+        /* 0X574 */ public float Unknown574;
+        /* 0X578 */ public float Unknown578;
+        /* 0X57C */ public float Unknown57C;
+        /* 0X580 */ public float Unknown580;
+        /* 0X584 */ public float Unknown584;
+        /* 0X588 */ public int UnknownInt588;
+        /* 0X58C */ public int UnknownInt58C;
+        /* 0X590 */ public float Unknown590;
+        /* 0X594 */ public float Unknown594;
+        /* 0X598 */ public float Unknown598;
+        /* 0X59C */ public float Unknown59C;
+        /* 0X5A0 */ public float Unknown5A0;
+        /* 0X5A4 */ public float Unknown5A4;
+        /* 0X5A8 */ public float Unknown5A8;
+        /* 0X5AC */ public float Unknown5AC;
+        /* 0X5B0 */ public float Unknown5B0;
+        /* 0X5B4 */ public float Unknown5B4;
+        /* 0X5B8 */ public float Unknown5B8;
+        /* 0X5BC */ public float Unknown5BC;
+        /* 0X5C0 */ public float Unknown5C0;
+        /* 0X5C4 */ public float Unknown5C4;
+        /* 0X5C8 */ public float Unknown5C8;
+        /* 0X5CC */ public float Unknown5CC;
+        /* 0X5D0 */ public float Unknown5D0;
+        /* 0X5D4 */ public float Unknown5D4;
+        /* 0X5D8 */ public float Unknown5D8;
+        /* 0X5DC */ public float Unknown5DC;
+        /* 0X5E0 */ public float Unknown5E0;
+        /* 0X5E4 */ public float Unknown5E4;
+        /* 0X5E8 */ public float Unknown5E8;
+        /* 0X5EC */ public float Unknown5EC;
+        /* 0X5F0 */ public float Unknown5F0;
+        /* 0X5F4 */ public float Unknown5F4;
+        /* 0X5F8 */ public float Unknown5F8;
+        /* 0X5FC */ public float Unknown5FC;
+        /* 0X600 */ public float Unknown600;
+
+        /* 0x604 */ public TkNGuiRectanglePulseEffect Unknown604;
+        /* 0x618 */ public TkNGuiRectanglePulseEffect Unknown618;
+        /* 0x62C */ public float Unknown62C;
+        /* 0x630 */ public float Unknown630;
+        /* 0X634 */ public float Unknown634;
+        /* 0X638 */ public float Unknown638;
+        /* 0X63C */ public float Unknown63C;
+        /* 0X640 */ public float Unknown640;
+        /* 0X644 */ public float Unknown644;
+        /* 0X648 */ public float Unknown648;
+        /* 0X64C */ public float Unknown64C;
+        /* 0X650 */ public float Unknown650;
+        /* 0X654 */ public float Unknown654;
+        /* 0X658 */ public int UnknownInt658;
+        /* 0X65C */ public bool Unknown65C;
+        /* 0X660 */ public float Unknown660;
+        /* 0X664 */ public float Unknown664;
+        /* 0X668 */ public float Unknown668;
+        /* 0X66C */ public float Unknown66C;
+        /* 0X670 */ public float Unknown670;
+        /* 0X674 */ public float Unknown674;
+        /* 0X678 */ public float Unknown678;
+        /* 0X67C */ public float Unknown67C;
+        /* 0X680 */ public float Unknown680;
+        /* 0X684 */ public float Unknown684;
+        /* 0X688 */ public float Unknown688;
+        /* 0X68C */ public float Unknown68C;
+        /* 0X690 */ public float Unknown690;
+        /* 0X694 */ public float Unknown694;
+        /* 0X698 */ public float Unknown698;
+        /* 0X69C */ public float Unknown69C;
+        /* 0X6A0 */ public float Unknown6A0;
+        /* 0X6A4 */ public float Unknown6A4;
+        /* 0X6A8 */ public float Unknown6A8;
+        /* 0X6AC */ public float Unknown6AC;
+        /* 0X6B0 */ public float Unknown6B0;
+        /* 0X6B4 */ public float Unknown6B4;
+        /* 0X6B8 */ public float Unknown6B8;
+        /* 0X6BC */ public float Unknown6BC;
+        /* 0X6C0 */ public float Unknown6C0;
+        /* 0X6C4 */ public float Unknown6C4;
+        /* 0X6C8 */ public float Unknown6C8;
+        /* 0X6CC */ public float Unknown6CC;
+        /* 0X6D0 */ public float Unknown6D0;
+        /* 0X6D4 */ public float Unknown6D4;
+        /* 0X6D8 */ public float Unknown6D8;
+        /* 0X6DC */ public float Unknown6DC;
+        /* 0X6E0 */ public float Unknown6E0;
+        /* 0X6E4 */ public float Unknown6E4;
+        /* 0X6E8 */ public float Unknown6E8;
+        /* 0X6EC */ public float Unknown6EC;
+        /* 0X6F0 */ public float Unknown6F0;
+        /* 0X6F4 */ public float Unknown6F4;
+        /* 0X6F8 */ public float Unknown6F8;
+        /* 0X6FC */ public float Unknown6FC;
+        /* 0X700 */ public float Unknown700;
+        /* 0X704 */ public float Unknown704;
+        /* 0X708 */ public float Unknown708;
+        /* 0X70C */ public float Unknown70C;
+        /* 0X710 */ public float Unknown710;
+        /* 0X714 */ public float Unknown714;
+        /* 0X718 */ public float Unknown718;
+        /* 0X71C */ public float Unknown71C;
+        /* 0X720 */ public float Unknown720;
+        /* 0X724 */ public float Unknown724;
+        /* 0X728 */ public float Unknown728;
+        /* 0X72C */ public float Unknown72C;
+        /* 0X730 */ public float Unknown730;
+        [NMS(Size = 0x80)]
+        /* 0x734 */ public string Unknown734;
+        [NMS(Size = 0x80)]
+        /* 0x7B4 */ public string Unknown7B4;
+        [NMS(Size = 0x80)]
+        /* 0x834 */ public string Unknown834;
+        [NMS(Size = 0x80)]
+        /* 0x8B4 */ public string Unknown8B4;
+        [NMS(Size = 0x80)]
+        /* 0x934 */ public string Unknown934;
+        [NMS(Size = 0x80)]
+        /* 0x9B4 */ public string Unknown9B4;
+        [NMS(Size = 0x80)]
+        /* 0xA34 */ public string UnknownA34;
+        [NMS(Size = 0x80)]
+        /* 0xAB4 */ public string UnknownAB4;
+        [NMS(Size = 0x80)]
+        /* 0xB34 */ public string UnknownB34;
+        [NMS(Size = 0x80)]
+        /* 0xBB4 */ public string UnknownBB4;
+        [NMS(Size = 0x80)]
+        /* 0xC34 */ public string UnknownC34;
+        [NMS(Size = 0x80)]
+        /* 0xCB4 */ public string UnknownCB4;
+        [NMS(Size = 0x80)]
+        /* 0xD34 */ public string UnknownD34;
+        [NMS(Size = 0x80)]
+        /* 0xDB4 */ public string UnknownDB4;
+        [NMS(Size = 0x80)]
+        /* 0xE34 */ public string UnknownE34;
+        [NMS(Size = 0x80)]
+        /* 0xEB4 */ public string UnknownEB4;
+        [NMS(Size = 0x80)]
+        /* 0xF34 */ public string UnknownF34;
+        [NMS(Size = 0x80)]
+        /* 0xFB4 */ public string UnknownFB4;
+        [NMS(Size = 0x80)]
+        /* 0x1034 */ public string Unknown1034;
+        [NMS(Size = 0x80)]
+        /* 0x10B4 */ public string Unknown10B4;
+        [NMS(Size = 0x80)]
+        /* 0x1134 */ public string Unknown1134;
+        [NMS(Size = 0x80)]
+        /* 0x11B4 */ public string Unknown11B4;
+        [NMS(Size = 0x80)]
+        /* 0x1234 */ public string Unknown1234;
+        [NMS(Size = 0x80)]
+        /* 0x12B4 */ public string Unknown12B4;
+        [NMS(Size = 0x80)]
+        /* 0x1334 */ public string Unknown1334;
+        [NMS(Size = 0x80)]
+        /* 0x13B4 */ public string Unknown13B4;
+        [NMS(Size = 0x80)]
+        /* 0x1434 */ public string Unknown1434;
+        [NMS(Size = 0x80)]
+        /* 0x14B4 */ public string Unknown14B4;
+        [NMS(Size = 0x80)]
+        /* 0x1534 */ public string Unknown1534;
+        [NMS(Size = 0x80)]
+        /* 0x15B4 */ public string Unknown15B4;
+        [NMS(Size = 0x80)]
+        /* 0x1634 */ public string Unknown1634;
+        [NMS(Size = 0x80)]
+        /* 0x16B4 */ public string Unknown16B4;
+        [NMS(Size = 0x80)]
+        /* 0x1734 */ public string Unknown1734;
+        [NMS(Size = 0x80)]
+        /* 0x17B4 */ public string Unknown17B4;
+        [NMS(Size = 0x80)]
+        /* 0x1834 */ public string Unknown1834;
+        [NMS(Size = 0x80)]
+        /* 0x18B4 */ public string Unknown18B4;
+        [NMS(Size = 0x80)]
+        /* 0x1934 */ public string Unknown1934;
+        [NMS(Size = 0x80)]
+        /* 0x19B4 */ public string Unknown19B4;
+        [NMS(Size = 0x80)]
+        /* 0x1A34 */ public string Unknown1A34;
+        [NMS(Size = 0x80)]
+        /* 0x1AB4 */ public string Unknown1AB4;
+        [NMS(Size = 0x80)]
+        /* 0x1B34 */ public string Unknown1B34;
+        [NMS(Size = 0x80)]
+        /* 0x1BB4 */ public string Unknown1BB4;
+        [NMS(Size = 0x80)]
+        /* 0x1C34 */ public string Unknown1C34;
+        [NMS(Size = 0x80)]
+        /* 0x1CB4 */ public string Unknown1CB4;
+        [NMS(Size = 0x80)]
+        /* 0x1D34 */ public string Unknown1D34;
+        [NMS(Size = 0x80)]
+        /* 0x1DB4 */ public string Unknown1DB4;
+        [NMS(Size = 0x80)]
+        /* 0x1E34 */ public string Unknown1E34;
+        [NMS(Size = 0x80)]
+        /* 0x1EB4 */ public string Unknown1EB4;
+        [NMS(Size = 0x80)]
+        /* 0x1F34 */ public string Unknown1F34;
+        [NMS(Size = 0x80)]
+        /* 0x1FB4 */ public string Unknown1FB4;
+        [NMS(Size = 0x80)]
+        /* 0x2034 */ public string Unknown2034;
+        [NMS(Size = 0x80)]
+        /* 0x20B4 */ public string Unknown20B4;
+        [NMS(Size = 0x80)]
+        /* 0x2134 */ public string Unknown2134;
+        [NMS(Size = 0x80)]
+        /* 0x21B4 */ public string Unknown21B4;
+        [NMS(Size = 0x80)]
+        /* 0x2234 */ public string Unknown2234;
+
+        /* 0x22B4 */ public float Unkown22B4;
+        /* 0x22B8 */ public int Unknown22B8;
+        /* 0X22BC */ public float Unknown22BC;
+        /* 0X22C0 */ public float Unknown22C0;
+        /* 0X22C4 */ public float Unknown22C4;
+        /* 0X22C8 */ public float Unknown22C8;
+        /* 0X22CC */ public float Unknown22CC;
+        /* 0X22D0 */ public float Unknown22D0;
+        /* 0X22D4 */ public float Unknown22D4;
+        /* 0X22D8 */ public float Unknown22D8;
+        /* 0X22DC */ public float Unknown22DC;
+        /* 0X22E0 */ public float Unknown22E0;
+        /* 0X22E4 */ public float Unknown22E4;
+        /* 0X22E8 */ public float Unknown22E8;
+        /* 0X22EC */ public float Unknown22EC;
+        /* 0X22F0 */ public float Unknown22F0;
+        /* 0X22F4 */ public float Unknown22F4;
+        /* 0X22F8 */ public float Unknown22F8;
+        /* 0X22FC */ public float Unknown22FC;
+        /* 0X2300 */ public float Unknown2300;
+        /* 0X2304 */ public float Unknown2304;
+        /* 0X2308 */ public float Unknown2308;
+        /* 0X230C */ public float Unknown230C;
+        /* 0X2310 */ public float Unknown2310;
+        /* 0X2314 */ public float Unknown2314;
+        /* 0X2318 */ public float Unknown2318;
+        /* 0X231C */ public float Unknown231C;
+        /* 0X2320 */ public float Unknown2320;
+        /* 0X2324 */ public float Unknown2324;
+        /* 0X2328 */ public float Unknown2328;
+        /* 0X232C */ public float Unknown232C;
+        /* 0X2330 */ public float Unknown2330;
+        /* 0X2334 */ public float Unknown2334;
+        /* 0X2338 */ public float Unknown2338;
+        /* 0X233C */ public float Unknown233C;
+        /* 0X2340 */ public float Unknown2340;
+        /* 0X2344 */ public float Unknown2344;
+        /* 0X2348 */ public float Unknown2348;
+        /* 0X234C */ public float Unknown234C;
+        /* 0X2350 */ public float Unknown2350;
+        /* 0X2354 */ public float Unknown2354;
+        /* 0X2358 */ public float Unknown2358;
+        /* 0X235C */ public float Unknown235C;
+        /* 0X2360 */ public float Unknown2360;
+        /* 0X2364 */ public float Unknown2364;
+        /* 0X2368 */ public float Unknown2368;
+        /* 0X236C */ public float Unknown236C;
+        /* 0X2370 */ public float Unknown2370;
+        /* 0X2374 */ public float Unknown2374;
+        /* 0X2378 */ public float Unknown2378;
+        /* 0X237C */ public float Unknown237C;
+        [NMS(Size = 0x20)]
+		/* 0x2380 */ public string Unknown2380;
+		[NMS(Size = 0x20)]
+		/* 0x23A0 */ public string Unknown23A0;
+		[NMS(Size = 0x20)]
+		/* 0x23C0 */ public string Unknown23C0;
+
+		/* 0X23E0 */ public float Unknown23E0;
+		/* 0X23E4 */ public float Unknown23E4;
+		/* 0X23E8 */ public float Unknown23E8;
+		/* 0X23EC */ public float Unknown23EC;
+		/* 0X23F0 */ public float Unknown23F0;
+		/* 0X23F4 */ public float Unknown23F4;
+		/* 0X23F8 */ public float Unknown23F8;
+		/* 0X23FC */ public float Unknown23FC;
+		/* 0X2400 */ public float Unknown2400;
+		/* 0X2404 */ public float Unknown2404;
+		/* 0X2408 */ public float Unknown2408;
+		/* 0X240C */ public float Unknown240C;
+		/* 0X2410 */ public float Unknown2410;
+		/* 0X2414 */ public float Unknown2414;
+		/* 0X2418 */ public float Unknown2418;
+		/* 0X241C */ public float Unknown241C;
+		/* 0X2420 */ public float Unknown2420;
+		/* 0X2424 */ public float Unknown2424;
+		/* 0X2428 */ public float Unknown2428;
+		/* 0X242C */ public float Unknown242C;
+		/* 0X2430 */ public float Unknown2430;
+		/* 0X2434 */ public float Unknown2434;
+		/* 0X2438 */ public float Unknown2438;
+		/* 0X243C */ public float Unknown243C;
+		/* 0X2440 */ public float Unknown2440;
+		/* 0X2444 */ public float Unknown2444;
+		/* 0X2448 */ public float Unknown2448;
+		/* 0X244C */ public float Unknown244C;
+		/* 0X2450 */ public float Unknown2450;
+		/* 0X2454 */ public float Unknown2454;
+		/* 0X2458 */ public float Unknown2458;
+		/* 0X245C */ public float Unknown245C;
+
+		/* 0X2460 */ public float Unknown2460;      // some kind of struct here? (0x20 long repeated twice)
+		/* 0X2464 */ public float Unknown2464;
+		/* 0X2468 */ public float Unknown2468;
+		/* 0X246C */ public float Unknown246C;
+		/* 0X2470 */ public float Unknown2470;
+		/* 0X2474 */ public float Unknown2474;
+		/* 0X2478 */ public float Unknown2478;
+		/* 0X247C */ public float Unknown247C;
+
+		/* 0X2480 */ public float Unknown2480;
+		/* 0X2484 */ public float Unknown2484;
+		/* 0X2488 */ public float Unknown2488;
+		/* 0X248C */ public float Unknown248C;
+		/* 0X2490 */ public float Unknown2490;
+		/* 0X2494 */ public float Unknown2494;
+		/* 0X2498 */ public float Unknown2498;
+		/* 0X249C */ public float Unknown249C;
+
+		/* 0X24A0 */ public float Unknown24A0;
+		/* 0X24A4 */ public float Unknown24A4;
+		/* 0X24A8 */ public float Unknown24A8;
+		/* 0X24AC */ public float Unknown24AC;
+		/* 0X24B0 */ public float Unknown24B0;
+		/* 0X24B4 */ public int UnknownInt24B4;
+		/* 0X24B8 */ public float Unknown24B8;
+		/* 0X24BC */ public float Unknown24BC;
+		/* 0X24C0 */ public float Unknown24C0;
+		/* 0X24C4 */ public float Unknown24C4;
+		/* 0X24C8 */ public float Unknown24C8;
+		/* 0X24CC */ public float Unknown24CC;
+		/* 0X24D0 */ public float Unknown24D0;
+		/* 0X24D4 */ public float Unknown24D4;
+		/* 0X24D8 */ public float Unknown24D8;
+		/* 0X24DC */ public float Unknown24DC;
+		/* 0X24E0 */ public float Unknown24E0;
+		/* 0X24E4 */ public float Unknown24E4;
+		/* 0X24E8 */ public float Unknown24E8;
+		/* 0X24EC */ public float Unknown24EC;
+		/* 0X24F0 */ public float Unknown24F0;
+		/* 0X24F4 */ public float Unknown24F4;
+		/* 0X24F8 */ public float Unknown24F8;
+		/* 0X24FC */ public float Unknown24FC;
+		/* 0X2500 */ public float Unknown2500;
+		/* 0X2504 */ public float Unknown2504;
+		/* 0X2508 */ public float Unknown2508;
+		/* 0X250C */ public float Unknown250C;
+		/* 0X2510 */ public float Unknown2510;
+		/* 0X2514 */ public float Unknown2514;
+		/* 0X2518 */ public float Unknown2518;
+		/* 0X251C */ public float Unknown251C;
+		/* 0X2520 */ public float Unknown2520;
+		/* 0X2524 */ public float Unknown2524;
+		/* 0X2528 */ public float Unknown2528;
+		/* 0X252C */ public float Unknown252C;
+		/* 0X2530 */ public float Unknown2530;
+		/* 0X2534 */ public float Unknown2534;
+		/* 0X2538 */ public float Unknown2538;
+		/* 0X253C */ public float Unknown253C;
+		/* 0X2540 */ public float Unknown2540;
+		/* 0X2544 */ public float Unknown2544;
+		/* 0X2548 */ public float Unknown2548;
+		/* 0X254C */ public float Unknown254C;
+        /* 0x2550 */ public bool Unknown2550;
+        /* 0x2551 */ public bool Unknown2551;
+        /* 0x2552 */ public bool Unknown2552;
+        [NMS(Size = 0x20)]
+        /* 0x2553 */ public string Unknown2553;
+        [NMS(Size = 0x20)]
+        /* 0x2573 */ public string Unknown2573;
+        /* 0x2594 */ public float Unknown2594;
+        /* 0X2598 */ public float Unknown2598;
+		/* 0X259C */ public float Unknown259C;
+		/* 0X25A0 */ public float Unknown25A0;
+		/* 0X25A4 */ public float Unknown25A4;
+		/* 0X25A8 */ public float Unknown25A8;
+		/* 0X25AC */ public float Unknown25AC;
+		/* 0X25B0 */ public float Unknown25B0;
+		/* 0X25B4 */ public float Unknown25B4;
+		/* 0X25B8 */ public float Unknown25B8;
+		/* 0X25BC */ public float Unknown25BC;
+		/* 0X25C0 */ public float Unknown25C0;
+		/* 0X25C4 */ public float Unknown25C4;
+		/* 0X25C8 */ public float Unknown25C8;
+		/* 0X25CC */ public float Unknown25CC;
+		/* 0X25D0 */ public float Unknown25D0;
+		/* 0X25D4 */ public float Unknown25D4;
+		/* 0X25D8 */ public float Unknown25D8;
+		/* 0X25DC */ public float Unknown25DC;
+		/* 0X25E0 */ public float Unknown25E0;
+		/* 0X25E4 */ public float Unknown25E4;
+		/* 0X25E8 */ public float Unknown25E8;
+		/* 0X25EC */ public float Unknown25EC;
 
         [NMS(Size = 6, EnumValue = new string[6] { "None", "NoOxygen", "ExtremeHeat", "ExtremeCold", "ToxicGas", "Radiation" })]
-        public NMSString0x80[] HazardEffects;
+        /* 0x25F0 */ public NMSString0x80[] HazardEffects;
 
         [NMS(Size = 6, EnumValue = new string[6] { "None", "NoOxygen", "ExtremeHeat", "ExtremeCold", "ToxicGas", "Radiation" })]
-        public NMSString0x80[] HazardEffectsNormal;
+        /* 0x28F0 */ public NMSString0x80[] HazardEffectsNormal;
 
         [NMS(Size = 6, EnumValue = new string[6] { "None", "NoOxygen", "ExtremeHeat", "ExtremeCold", "ToxicGas", "Radiation" })]
-        public NMSString0x80[] HazardEffectsRefraction;
+        /* 0x2BF0 */ public NMSString0x80[] HazardEffectsRefraction;
 
-        public float Unknown2BA8;
-        public float Unknown2BAC;
-
-        public Colour Unknown2BB0;
-        /*
-        public float Unknown2BB0;           // following 8 blocks maybe Colour's?
-        public float Unknown2BB4;
-        public float Unknown2BB8;
-        public float Unknown2BBC;*/
-
-        public Colour Unknown2BC0;
-        /*public float Unknown2BC0;
-        public float Unknown2BC4;
-        public float Unknown2BC8;
-        public float Unknown2BCC;*/
-
-        public Colour Unknown2BD0;
-        /*public float Unknown2BD0;
-        public float Unknown2BD4;
-        public float Unknown2BD8;
-        public float Unknown2BDC;*/
-
-        public Colour Unknown2BE0;
-        /*public float Unknown2BE0;
-        public float Unknown2BE4;
-        public float Unknown2BE8;
-        public float Unknown2BEC;*/
-
-        public Colour Unknown2BF0;
-        /*public float Unknown2BF0;
-        public float Unknown2BF4;
-        public float Unknown2BF8;
-        public float Unknown2BFC;*/
-
-        public Colour Unknown2C00;
-        /*public float Unknown2C00;
-        public float Unknown2C04;
-        public float Unknown2C08;
-        public float Unknown2C0C;*/
-
-        public Colour Unknown2C10;
-        /*public float Unknown2C10;
-        public float Unknown2C14;
-        public float Unknown2C18;
-        public float Unknown2C1C;*/
-
-        public Colour Unknown2C20;
-        /*public float Unknown2C20;
-        public float Unknown2C24;
-        public float Unknown2C28;
-        public float Unknown2C2C;*/
-
-        public float Unknown2C30;
-        public float Unknown2C34;
-        public float Unknown2C38;
-        public float Unknown2C3C;
-        public float Unknown2C40;
-        public float Unknown2C44;
-        public float Unknown2C48;
-        public float Unknown2C4C;
-        public float Unknown2C50;
-        public float Unknown2C54;
-        public float Unknown2C58;
-        public float Unknown2C5C;
-        public float Unknown2C60;
-        public float Unknown2C64;
-        public float Unknown2C68;
-        public float Unknown2C6C;
-
-        public GcModelViewCollection Unknown2C70;
-
-        /* 0x3450 */ public Colour CursorMainColour;
-        /* 0x3460 */ public Colour CursorActionColour;
-        /* 0x3470 */ public Colour CursorDeleteColour;
-        public float Unknown3480;
-        public float Unknown3484;
-        public float FastActionTime1;
-        public float FastActionTime2;
-        public float FastActionTime3;
-        public int UnknownInt3494;
-        /* 0x3498 */ public float CursorSize;
-        public float Unknown349C;
-        public float Unknown34A0;
-        /* 0x34A4 */ public float CursorThickness;
-        /* 0x34A8 */ public float DelayToLeaveMenu;
-        public float Unknown34AC;
-        /* 0x34B0 */ public float DelayToShowMenuCursor;
-        public float Unknown34B4;
-        public float Unknown34B8;
-        public float Unknown34BC;
-        /* 0x34C0 */ public float DelayToEnterMenu;
-        public float Unknown34C4;
-        public int UnknownInt34C8;
-        public float Unknown34CC;
-        public float Unknown34D0;
-        public float Unknown34D4;
-        public int UnknownInt34D8;
-        public int UnknownInt34DC;
-        public float Unknown34E0;
-        public float Unknown34E4;
-        public float Unknown34E8;
-        public int UnknownInt34EC;
-        public float Unknown34F0;
-        public float Unknown34F4;
-        public float Unknown34F8;
-        public float Unknown34FC;
-        public float Unknown3500;
-        public int UnknownInt3504;
-        public float Unknown3508;
-        public float Unknown350C;
-        public float Unknown3510;
-        public float Unknown3514;
-        public float Unknown3518;
-        public float Unknown351C;
-        public float Unknown3520;
-        public float Unknown3524;
-        public float Unknown3528;
-        public float Unknown352C;
-        public float Unknown3530;
-        public float Unknown3534;
-        public float Unknown3538;
-        public float Unknown353C;
-        public float Unknown3540;
-        public float Unknown3544;
-        public float Unknown3548;
-        public float Unknown354C;
-        public float Unknown3550;
-        public float Unknown3554;
-        public float Unknown3558;
-        public float Unknown355C;
-        public float Unknown3560;
-        public float Unknown3564;
-        public float Unknown3568;
-        public float Unknown356C;
-        public float Unknown3570;
-        public float Unknown3574;
-        public float Unknown3578;
-        public float Unknown357C;
-        public float Unknown3580;
-        public float Unknown3584;
-        public float Unknown3588;
-        public float Unknown358C;
-        public float Unknown3590;
-        public float Unknown3594;
-        public float Unknown3598;
-        public float Unknown359C;
-        public float Unknown35A0;
-        public float Unknown35A4;
-        public float Unknown35A8;
-        public float Unknown35AC;
-        public float Unknown35B0;
-        public float Unknown35B4;
-        public float Unknown35B8;
-        public float Unknown35BC;
-        public float Unknown35C0;
-        public float Unknown35C4;
-        public float Unknown35C8;
-        public float Unknown35CC;
-        public float Unknown35D0;
-        public float Unknown35D4;
-        public float Unknown35D8;
-        public float Unknown35DC;
-        public float Unknown35E0;
-        public float Unknown35E4;
-        public float Unknown35E8;
-        public float Unknown35EC;
-        public float Unknown35F0;
-        public float Unknown35F4;
-        public float Unknown35F8;
-        public float Unknown35FC;
-        public float Unknown3600;
-        public float Unknown3604;
-        public float Unknown3608;
-        public float Unknown360C;
-        public float Unknown3610;
-        public float Unknown3614;
-        public float Unknown3618;
-        public float Unknown361C;
-        public float Unknown3620;
-        public float Unknown3624;
-        public float Unknown3628;
-        public float Unknown362C;
-        public float Unknown3630;
-        public float Unknown3634;
-        public float Unknown3638;
-        public float Unknown363C;
-        public float Unknown3640;
-        public float Unknown3644;
-        public float Unknown3648;
-        public float Unknown364C;
-        public float Unknown3650;
-        public float Unknown3654;
-        public float Unknown3658;
-        public float Unknown365C;
-
-        public GcSpaceMapObjectData Unknown3660;
-        public GcSpaceMapObjectData Unknown3690;
-        public GcSpaceMapObjectData Unknown36C0;
-        public GcSpaceMapObjectData Unknown36F0;
-        public GcSpaceMapObjectData Unknown3720;
-
-        public float Unknown3750;
-        public float Unknown3754;
-        public float Unknown3758;
-        public float Unknown375C;
-        public float Unknown3760;
-        public float Unknown3764;
-        public float Unknown3768;
-        public float Unknown376C;
-        public float Unknown3770;
-        public float Unknown3774;
-        public float Unknown3778;
-        public float Unknown377C;
-        public float Unknown3780;
-        public float Unknown3784;
-        public float Unknown3788;
-        public float Unknown378C;
-        public float Unknown3790;
-        public float Unknown3794;
-        public float Unknown3798;
-        public float Unknown379C;
-        public float Unknown37A0;
-        public float Unknown37A4;
-        public float Unknown37A8;
-        public float Unknown37AC;
-        public float Unknown37B0;
-        public float Unknown37B4;
-        public float Unknown37B8;
-        public float Unknown37BC;
-        public float Unknown37C0;
-        public float Unknown37C4;
-        public float Unknown37C8;
-        public float Unknown37CC;
-        public float Unknown37D0;
-        public float Unknown37D4;
-        public float Unknown37D8;
-        public float Unknown37DC;
+        /* 0x2EF0 */ public float Unknown2EF0;
+        [NMS(Size = 0xC, Ignore = true)]
+        /* 0x2EF4 */ public byte[] Padding2EF4;
+        /* 0X2F00 */ public float Unknown2F00;
+		/* 0X2F04 */ public float Unknown2F04;
+		/* 0X2F08 */ public float Unknown2F08;
+		/* 0X2F0C */ public float Unknown2F0C;
+		/* 0X2F10 */ public float Unknown2F10;
+		/* 0X2F14 */ public float Unknown2F14;
+		/* 0X2F18 */ public float Unknown2F18;
+		/* 0X2F1C */ public float Unknown2F1C;
+		/* 0X2F20 */ public float Unknown2F20;
+		/* 0X2F24 */ public float Unknown2F24;
+		/* 0X2F28 */ public float Unknown2F28;
+		/* 0X2F2C */ public float Unknown2F2C;
+		/* 0X2F30 */ public float Unknown2F30;
+		/* 0X2F34 */ public float Unknown2F34;
+		/* 0X2F38 */ public float Unknown2F38;
+		/* 0X2F3C */ public float Unknown2F3C;
+		/* 0X2F40 */ public float Unknown2F40;
+		/* 0X2F44 */ public float Unknown2F44;
+		/* 0X2F48 */ public float Unknown2F48;
+		/* 0X2F4C */ public float Unknown2F4C;
+		/* 0X2F50 */ public float Unknown2F50;
+		/* 0X2F54 */ public float Unknown2F54;
+		/* 0X2F58 */ public float Unknown2F58;
+		/* 0X2F5C */ public float Unknown2F5C;
+		/* 0X2F60 */ public float Unknown2F60;
+		/* 0X2F64 */ public float Unknown2F64;
+		/* 0X2F68 */ public float Unknown2F68;
+		/* 0X2F6C */ public float Unknown2F6C;
+		/* 0X2F70 */ public float Unknown2F70;
+		/* 0X2F74 */ public float Unknown2F74;
+		/* 0X2F78 */ public float Unknown2F78;
+		/* 0X2F7C */ public float Unknown2F7C;
+		/* 0X2F80 */ public float Unknown2F80;
+		/* 0X2F84 */ public float Unknown2F84;
+		/* 0X2F88 */ public float Unknown2F88;
+		/* 0X2F8C */ public float Unknown2F8C;
+		/* 0X2F90 */ public float Unknown2F90;
+		/* 0X2F94 */ public float Unknown2F94;
+		/* 0X2F98 */ public float Unknown2F98;
+		/* 0X2F9C */ public float Unknown2F9C;
+		/* 0X2FA0 */ public float Unknown2FA0;
+		/* 0X2FA4 */ public float Unknown2FA4;
+		/* 0X2FA8 */ public float Unknown2FA8;
+		/* 0X2FAC */ public float Unknown2FAC;
+		/* 0X2FB0 */ public float Unknown2FB0;
+		/* 0X2FB4 */ public float Unknown2FB4;
+		/* 0X2FB8 */ public float Unknown2FB8;
+		/* 0X2FBC */ public float Unknown2FBC;
+        /* 0x2FC0 */ public GcModelViewCollection Unknown2FC0;
+        /* 0x3810 */ public Colour CursorMainColour;
+		/* 0X3820 */ public Colour CursorActionColour;
+		/* 0X3830 */ public Colour CursorDeleteColour;
+		/* 0X3840 */ public float Unknown3840;
+		/* 0X3844 */ public float Unknown3844;
+		/* 0X3848 */ public float FastActionTime1;
+		/* 0X384C */ public float FastActionTime2;
+		/* 0X3850 */ public float FastActionTime3;
+		/* 0X3854 */ public int UnknownInt3854;
+		/* 0X3858 */ public float CursorSize;
+		/* 0X385C */ public float Unknown385C;
+		/* 0X3860 */ public float Unknown3860;
+		/* 0X3864 */ public float CursorThickness;
+		/* 0X3868 */ public float DelayToLeaveMenu;
+		/* 0X386C */ public float Unknown386C;
+		/* 0X3870 */ public float DelayToShowMenuCursor;
+		/* 0X3874 */ public float Unknown3874;
+		/* 0X3878 */ public float Unknown3878;
+		/* 0X387C */ public float Unknown387C;
+		/* 0X3880 */ public float DelayToEnterMenu;
+		/* 0X3884 */ public float Unknown3884;
+		/* 0X3888 */ public int UnknownInt3888;
+		/* 0X388C */ public float Unknown388C;
+		/* 0X3890 */ public float Unknown3890;
+		/* 0X3894 */ public float Unknown3894;
+		/* 0X3898 */ public int UnknownInt3898;
+		/* 0X389C */ public int UnknownInt389C;
+		/* 0X38A0 */ public float Unknown38A0;
+		/* 0X38A4 */ public float Unknown38A4;
+		/* 0X38A8 */ public float Unknown38A8;
+		/* 0X38AC */ public int UnknownInt38AC;
+		/* 0X38B0 */ public float Unknown38B0;
+		/* 0X38B4 */ public float Unknown38B4;
+		/* 0X38B8 */ public float Unknown38B8;
+		/* 0X38BC */ public float Unknown38BC;
+		/* 0X38C0 */ public float Unknown38C0;
+		/* 0X38C4 */ public float Unknown38C4;
+		/* 0X38C8 */ public float Unknown38C8;
+		/* 0X38CC */ public float Unknown38CC;
+		/* 0X38D0 */ public float Unknown38D0;
+		/* 0X38D4 */ public float Unknown38D4;
+		/* 0X38D8 */ public float Unknown38D8;
+		/* 0X38DC */ public float Unknown38DC;
+		/* 0X38E0 */ public float Unknown38E0;
+		/* 0X38E4 */ public float Unknown38E4;
+		/* 0X38E8 */ public float Unknown38E8;
+		/* 0X38EC */ public float Unknown38EC;
+		/* 0X38F0 */ public float Unknown38F0;
+		/* 0X38F4 */ public float Unknown38F4;
+		/* 0X38F8 */ public float Unknown38F8;
+		/* 0X38FC */ public float Unknown38FC;
+		/* 0X3900 */ public float Unknown3900;
+		/* 0X3904 */ public float Unknown3904;
+		/* 0X3908 */ public float Unknown3908;
+		/* 0X390C */ public float Unknown390C;
+		/* 0X3910 */ public float Unknown3910;
+		/* 0X3914 */ public float Unknown3914;
+		/* 0X3918 */ public float Unknown3918;
+		/* 0X391C */ public float Unknown391C;
+		/* 0X3920 */ public float Unknown3920;
+		/* 0X3924 */ public float Unknown3924;
+		/* 0X3928 */ public float Unknown3928;
+		/* 0X392C */ public float Unknown392C;
+		/* 0X3930 */ public float Unknown3930;
+		/* 0X3934 */ public float Unknown3934;
+		/* 0X3938 */ public float Unknown3938;
+		/* 0X393C */ public float Unknown393C;
+		/* 0X3940 */ public float Unknown3940;
+		/* 0X3944 */ public float Unknown3944;
+		/* 0X3948 */ public float Unknown3948;
+		/* 0X394C */ public float Unknown394C;
+		/* 0X3950 */ public float Unknown3950;
+		/* 0X3954 */ public float Unknown3954;
+		/* 0X3958 */ public float Unknown3958;
+		/* 0X395C */ public float Unknown395C;
+		/* 0X3960 */ public float Unknown3960;
+		/* 0X3964 */ public float Unknown3964;
+		/* 0X3968 */ public float Unknown3968;
+		/* 0X396C */ public float Unknown396C;
+		/* 0X3970 */ public float Unknown3970;
+		/* 0X3974 */ public float Unknown3974;
+		/* 0X3978 */ public float Unknown3978;
+		/* 0X397C */ public float Unknown397C;
+		/* 0X3980 */ public float Unknown3980;
+		/* 0X3984 */ public float Unknown3984;
+		/* 0X3988 */ public float Unknown3988;
+		/* 0X398C */ public float Unknown398C;
+		/* 0X3990 */ public float Unknown3990;
+		/* 0X3994 */ public float Unknown3994;
+		/* 0X3998 */ public float Unknown3998;
+		/* 0X399C */ public float Unknown399C;
+		/* 0X39A0 */ public float Unknown39A0;
+		/* 0X39A4 */ public float Unknown39A4;
+		/* 0X39A8 */ public float Unknown39A8;
+		/* 0X39AC */ public float Unknown39AC;
+		/* 0X39B0 */ public float Unknown39B0;
+		/* 0X39B4 */ public float Unknown39B4;
+		/* 0X39B8 */ public float Unknown39B8;
+		/* 0X39BC */ public float Unknown39BC;
+		/* 0X39C0 */ public float Unknown39C0;
+		/* 0X39C4 */ public float Unknown39C4;
+		/* 0X39C8 */ public float Unknown39C8;
+		/* 0X39CC */ public float Unknown39CC;
+		/* 0X39D0 */ public float Unknown39D0;
+		/* 0X39D4 */ public float Unknown39D4;
+		/* 0X39D8 */ public float Unknown39D8;
+		/* 0X39DC */ public float Unknown39DC;
+		/* 0X39E0 */ public float Unknown39E0;
+		/* 0X39E4 */ public float Unknown39E4;
+		/* 0X39E8 */ public float Unknown39E8;
+		/* 0X39EC */ public float Unknown39EC;
+		/* 0X39F0 */ public float Unknown39F0;
+		/* 0X39F4 */ public float Unknown39F4;
+		/* 0X39F8 */ public float Unknown39F8;
+		/* 0X39FC */ public float Unknown39FC;
+		/* 0X3A00 */ public float Unknown3A00;
+		/* 0X3A04 */ public float Unknown3A04;
+		/* 0X3A08 */ public float Unknown3A08;
+		/* 0X3A0C */ public float Unknown3A0C;
+		/* 0X3A10 */ public float Unknown3A10;
+		/* 0X3A14 */ public float Unknown3A14;
+		/* 0X3A18 */ public float Unknown3A18;
+		/* 0X3A1C */ public float Unknown3A1C;
+        /* 0x3A20 */ public GcSpaceMapObjectData Unknown3A20;
+        /* 0x3A50 */ public GcSpaceMapObjectData Unknown3A50;
+        /* 0x3A80 */ public GcSpaceMapObjectData Unknown3A80;
+        /* 0x3AB0 */ public GcSpaceMapObjectData Unknown3AB0;
+        /* 0x3AE0 */ public GcSpaceMapObjectData Unknown3AE0;
+        /* 0x3B10 */ public float Unknown3B10;
+		/* 0X3B14 */ public float Unknown3B14;
+		/* 0X3B18 */ public float Unknown3B18;
+		/* 0X3B1C */ public float Unknown3B1C;
+		/* 0X3B20 */ public float Unknown3B20;
+		/* 0X3B24 */ public float Unknown3B24;
+		/* 0X3B28 */ public float Unknown3B28;
+		/* 0X3B2C */ public float Unknown3B2C;
+		/* 0X3B30 */ public float Unknown3B30;
+		/* 0X3B34 */ public float Unknown3B34;
+		/* 0X3B38 */ public float Unknown3B38;
+		/* 0X3B3C */ public float Unknown3B3C;
+		/* 0X3B40 */ public float Unknown3B40;
+		/* 0X3B44 */ public float Unknown3B44;
+		/* 0X3B48 */ public float Unknown3B48;
+		/* 0X3B4C */ public float Unknown3B4C;
+		/* 0X3B50 */ public Colour Unknown3B50;
+		/* 0X3B60 */ public Colour Unknown3B60;
+		/* 0X3B70 */ public Colour Unknown3B70;
+		/* 0X3B80 */ public Colour Unknown3B80;
+		/* 0X3B90 */ public Colour Unknown3B90;
 
         [NMS(Size = 0x100)]
-        public string Unknown37E0;
-        [NMS(Size = 0x100)]
-        public string Unknown38E0;
-        [NMS(Size = 0x100)]
-        public string Unknown39E0;
-        [NMS(Size = 0x100)]
-        public string Unknown3AE0;
-        [NMS(Size = 0x100)]
-        public string Unknown3BE0;
-        [NMS(Size = 0x100)]
-        public string Unknown3CE0;
-        [NMS(Size = 0x100)]
-        public string Unknown3DE0;
-        [NMS(Size = 0x100)]
-        public string Unknown3EE0;
+		/* 0x3BA0 */ public string Unknown3BA0;
+		[NMS(Size = 0x100)]
+		/* 0x3CA0 */ public string Unknown3CA0;
+		[NMS(Size = 0x100)]
+		/* 0x3DA0 */ public string Unknown3DA0;
+		[NMS(Size = 0x100)]
+		/* 0x3EA0 */ public string Unknown3EA0;
+		[NMS(Size = 0x100)]
+		/* 0x3FA0 */ public string Unknown3FA0;
+		[NMS(Size = 0x100)]
+		/* 0x40A0 */ public string Unknown40A0;
+		[NMS(Size = 0x100)]
+		/* 0x41A0 */ public string Unknown41A0;
+		[NMS(Size = 0x100)]
+		/* 0x42A0 */ public string Unknown42A0;
 
-        public float Unknown3FE0;
-        public float Unknown3FE4;
-        public float Unknown3FE8;
-        public float Unknown3FEC;
-        public int UnknownInt3FF0;
-        public float Unknown3FF4;
-        public float Unknown3FF8;
-        public float Unknown3FFC;
-        public float Unknown4000;
-        public float Unknown4004;
-        public float Unknown4008;
-        public float Unknown400C;
-        public float Unknown4010;
-        public float Unknown4014;
-        public float Unknown4018;
-        public float Unknown401C;
-        public float Unknown4020;
-        public float Unknown4024;
-        public float Unknown4028;
-        public float Unknown402C;
-        public float Unknown4030;
-        public float Unknown4034;
-        public float Unknown4038;
-        public float Unknown403C;
-        public float Unknown4040;
-        public float Unknown4044;
-        public int UnknownInt4048;
-        public float Unknown404C;
-        public float Unknown4050;
-        public float Unknown4054;
-        public float Unknown4058;
-        public float Unknown405C;
-        public float Unknown4060;
-        public float Unknown4064;
-        public float Unknown4068;
-        public float Unknown406C;
-        public float Unknown4070;
-        public float Unknown4074;
-        public float Unknown4078;
-        public float Unknown407C;
-        public float Unknown4080;
-        public float Unknown4084;
-        public float Unknown4088;
-        public float Unknown408C;
-        public float Unknown4090;
-        public float Unknown4094;
-        public float Unknown4098;
-        public float Unknown409C;
-        public float Unknown40A0;
-        public float Unknown40A4;
-        public float Unknown40A8;
-        public float Unknown40AC;
-        public float Unknown40B0;
-        public float Unknown40B4;
-        public float Unknown40B8;
-        public float Unknown40BC;
-        public float Unknown40C0;
-        public float Unknown40C4;
-        public float Unknown40C8;
-        public float Unknown40CC;
-        public float Unknown40D0;
-        public float Unknown40D4;
-        public float Unknown40D8;
-        public float Unknown40DC;
-        public float Unknown40E0;
-        public float Unknown40E4;
-        public float Unknown40E8;
-        public float Unknown40EC;
-        public float Unknown40F0;
-        public float Unknown40F4;
-        public float Unknown40F8;
-        public float Unknown40FC;
-        public float Unknown4100;
-        public float Unknown4104;
-        public float Unknown4108;
-        public float Unknown410C;
-        public float Unknown4110;
-        public float Unknown4114;
-        public float Unknown4118;
-        public float Unknown411C;
-        public float Unknown4120;
-        public float Unknown4124;
-        public float Unknown4128;
-        public float Unknown412C;
-        public float Unknown4130;
-        public float Unknown4134;
-        public float Unknown4138;
-        public float Unknown413C;
-        public float Unknown4140;
-        public float Unknown4144;
-        public float Unknown4148;
-        public float Unknown414C;
-        public float Unknown4150;
-        public float Unknown4154;
-        public float Unknown4158;
-        public float Unknown415C;
-        public int UnknownInt4160;
-        public bool DisplayMenu3DModels;
-        public GcDiscoveryHelperTimings Unknown4168;
+        /* 0x43A0 */ public float Unknown43A0;
+		/* 0X43A4 */ public float Unknown43A4;
+		/* 0X43A8 */ public float Unknown43A8;
+		/* 0X43AC */ public float Unknown43AC;
+		/* 0X43B0 */ public int UnknownInt43B0;
+		/* 0X43B4 */ public float Unknown43B4;
+		/* 0X43B8 */ public float Unknown43B8;
+		/* 0X43BC */ public float Unknown43BC;
+		/* 0X43C0 */ public float Unknown43C0;
+		/* 0X43C4 */ public float Unknown43C4;
+		/* 0X43C8 */ public float Unknown43C8;
+		/* 0X43CC */ public float Unknown43CC;
+		/* 0X43D0 */ public float Unknown43D0;
+		/* 0X43D4 */ public float Unknown43D4;
+		/* 0X43D8 */ public float Unknown43D8;
+		/* 0X43DC */ public float Unknown43DC;
+		/* 0X43E0 */ public float Unknown43E0;
+		/* 0X43E4 */ public float Unknown43E4;
+		/* 0X43E8 */ public float Unknown43E8;
+		/* 0X43EC */ public float Unknown43EC;
+		/* 0X43F0 */ public float Unknown43F0;
+		/* 0X43F4 */ public float Unknown43F4;
+		/* 0X43F8 */ public float Unknown43F8;
+		/* 0X43FC */ public float Unknown43FC;
+		/* 0X4400 */ public float Unknown4400;
+		/* 0X4404 */ public float Unknown4404;
+		/* 0X4408 */ public int UnknownInt4408;
+		/* 0X440C */ public float Unknown440C;
+		/* 0X4410 */ public float Unknown4410;
+		/* 0X4414 */ public float Unknown4414;
+		/* 0X4418 */ public float Unknown4418;
+		/* 0X441C */ public float Unknown441C;
+		/* 0X4420 */ public float Unknown4420;
+		/* 0X4424 */ public float Unknown4424;
+		/* 0X4428 */ public float Unknown4428;
+		/* 0X442C */ public float Unknown442C;
+		/* 0X4430 */ public float Unknown4430;
+		/* 0X4434 */ public float Unknown4434;
+		/* 0X4438 */ public float Unknown4438;
+		/* 0X443C */ public float Unknown443C;
+		/* 0X4440 */ public float Unknown4440;
+		/* 0X4444 */ public float Unknown4444;
+		/* 0X4448 */ public float Unknown4448;
+		/* 0X444C */ public float Unknown444C;
+		/* 0X4450 */ public float Unknown4450;
+		/* 0X4454 */ public float Unknown4454;
+		/* 0X4458 */ public float Unknown4458;
+		/* 0X445C */ public float Unknown445C;
+		/* 0X4460 */ public float Unknown4460;
+		/* 0X4464 */ public float Unknown4464;
+		/* 0X4468 */ public float Unknown4468;
+		/* 0X446C */ public float Unknown446C;
+		/* 0X4470 */ public float Unknown4470;
+		/* 0X4474 */ public float Unknown4474;
+		/* 0X4478 */ public float Unknown4478;
+		/* 0X447C */ public float Unknown447C;
+		/* 0X4480 */ public float Unknown4480;
+		/* 0X4484 */ public float Unknown4484;
+		/* 0X4488 */ public float Unknown4488;
+		/* 0X448C */ public float Unknown448C;
+		/* 0X4490 */ public float Unknown4490;
+		/* 0X4494 */ public float Unknown4494;
+		/* 0X4498 */ public float Unknown4498;
+		/* 0X449C */ public float Unknown449C;
+		/* 0X44A0 */ public float Unknown44A0;
+		/* 0X44A4 */ public float Unknown44A4;
+		/* 0X44A8 */ public float Unknown44A8;
+		/* 0X44AC */ public float Unknown44AC;
+		/* 0X44B0 */ public float Unknown44B0;
+		/* 0X44B4 */ public float Unknown44B4;
+		/* 0X44B8 */ public float Unknown44B8;
+		/* 0X44BC */ public float Unknown44BC;
+		/* 0X44C0 */ public float Unknown44C0;
+		/* 0X44C4 */ public float Unknown44C4;
+		/* 0X44C8 */ public float Unknown44C8;
+		/* 0X44CC */ public float Unknown44CC;
+		/* 0X44D0 */ public float Unknown44D0;
+		/* 0X44D4 */ public float Unknown44D4;
+		/* 0X44D8 */ public float Unknown44D8;
+		/* 0X44DC */ public float Unknown44DC;
+		/* 0X44E0 */ public float Unknown44E0;
+		/* 0X44E4 */ public float Unknown44E4;
+		/* 0X44E8 */ public float Unknown44E8;
+		/* 0X44EC */ public float Unknown44EC;
+		/* 0X44F0 */ public float Unknown44F0;
+		/* 0X44F4 */ public float Unknown44F4;
+		/* 0X44F8 */ public float Unknown44F8;
+		/* 0X44FC */ public float Unknown44FC;
+		/* 0X4500 */ public float Unknown4500;
+		/* 0X4504 */ public float Unknown4504;
+		/* 0X4508 */ public float Unknown4508;
+		/* 0X450C */ public float Unknown450C;
+		/* 0X4510 */ public float Unknown4510;
+		/* 0X4514 */ public float Unknown4514;
+		/* 0X4518 */ public float Unknown4518;
+		/* 0X451C */ public float Unknown451C;
+		/* 0X4520 */ public float Unknown4520;
+		/* 0X4524 */ public int UnknownInt4524;
+		/* 0X4528 */ public bool DisplayMenu3DModels;
 
-        public GcHUDStartupTable Unknown4174;
+        /* 0x452C */ public GcDiscoveryHelperTimings Unknown452C;
+        /* 0x4538 */ public GcHUDStartupTable Unknown4538;
+        [NMS(Size = 0x6)]
+        /* 0x45B8 */ public GcInventorySlotActionData[] Unknown45B8;
 
-        public GcInventorySlotActionData Unknown41F4;
-        public GcInventorySlotActionData Unknown4210;
-        public GcInventorySlotActionData Unknown422C;
-        public GcInventorySlotActionData Unknown4248;
-        public GcInventorySlotActionData Unknown4264;
-        public GcInventorySlotActionData Unknown4280;
-        public float Unknown429C;
-        public float Unknown42A0;
-        public float Unknown42A4;
-        public int UnknownInt42A8;
-        public int UnknownInt42AC;
-        public float Unknown42B0;
-        public float Unknown42B4;
-
-        [NMS(Size = 0x8, Ignore = true)]
+		/* 0X4660 */ public float Unknown4660;
+		/* 0X4664 */ public float Unknown4664;
+		/* 0X4668 */ public float Unknown4668;
+		/* 0X466C */ public int UnknownInt466C;
+		/* 0X4670 */ public int UnknownInt4670;
+		/* 0X4674 */ public float Unknown4674;
+		/* 0X4678 */ public float Unknown4678;
+        [NMS(Size = 0x4, Ignore = true)]
         public byte[] EndPadding;
     }
 }

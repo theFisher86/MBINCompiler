@@ -1,10 +1,6 @@
 namespace MBINCompiler.Models.Structs
 {
-<<<<<<< HEAD
     [NMS(Size = 0x210)]
-=======
-    [NMS(Size = 0x200)]
->>>>>>> origin/master
     public class GcGalaxyRenderSetupData : NMSTemplate
     {
         /* 0x000 */ public Colour SunCoreColour;
@@ -36,7 +32,6 @@ namespace MBINCompiler.Models.Structs
         /* 0x08C */ public byte[] Padding8C;
 
         /* 0x090 */ public Vector4f CompositionControlB_S_C_G;
-<<<<<<< HEAD
         /* 0x0A0 */ public float CompositionSaturationIncreaseError;
         /* 0x0A4 */ public float CompositionSaturationIncreaseFilter;
         /* 0x0A8 */ public float CompositionSaturationIncreaseSelected;
@@ -54,20 +49,5 @@ namespace MBINCompiler.Models.Structs
         /* 0x0D0 */ public Colour[] MapLargeAreaPrimaryColours;
         [NMS(Size = 0xA)]
         /* 0x170 */ public Colour[] MapLargeAreaSecondaryColours;
-=======
-        /* 0x0A0 */ public float CompositionSaturationIncrease;
-        /* 0x0A4 */ public float VignetteSize;
-        /* 0x0A8 */ public float VignetteBase;
-        /* 0x0AC */ public float VignetteSizeIncrease;
-        /* 0x0B0 */ public Vector2f LensFlareExpandTowards;
-
-        [NMS(Size = 0x8, Ignore = true)]
-        /* 0x0B8 */ public byte[] PaddingB8;
-
-        [NMS(Size = 0xA)]
-        /* 0x0C0 */ public Colour[] MapLargeAreaPrimaryColours;
-        [NMS(Size = 0xA)]
-        /* 0x160 */ public Colour[] MapLargeAreaSecondaryColours;
->>>>>>> origin/master
     }
 }
