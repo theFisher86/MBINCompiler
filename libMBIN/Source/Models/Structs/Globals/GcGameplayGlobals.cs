@@ -278,9 +278,9 @@ namespace libMBIN.Models.Structs
         /* 0XF38 */ public float UnknownF38;
         /* 0XF3C */ public float FlashlightAngle;
         /* 0XF40 */ public float FlashlightIntensity;
-        /* 0XF44 */ public float UnknownF44;
-        /* 0XF48 */ public float UnknownF48;
-        /* 0XF4C */ public float UnknownF4C;
+        /* 0XF44 */ public float FlashlightXoffset;
+        /* 0XF48 */ public float FlashlightYoffset;
+        /* 0XF4C */ public float FlashlightZoffset;
         /* 0XF50 */ public float UnknownF50;
         /* 0XF54 */ public float UnknownF54;
         /* 0XF58 */ public float UnknownF58;
