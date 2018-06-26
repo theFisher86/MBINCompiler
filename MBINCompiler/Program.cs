@@ -35,9 +35,19 @@ namespace MBINCompiler {
 
             // no error checking ^^ (todo: error checking)
             var file = new MBINFile( inputPath );
-            file.Load( getVersion );
+            file.Load( );
 
-            if (!getVersion) {
+            if (getVersion) {
+                System.Version mbinVersion = file.Header.GetMBINVersion();
+                Console.WriteLine( mbinVersion );
+
+                //if (mbinVer == null) {
+                //    Console.WriteLine( (new System.Version(0,0,0,0)).ToString() );// "0.0.0.0" );
+                //} else {
+                //    Console.WriteLine( mbinVer );
+                //}
+
+            } else {
                 var data = file.GetData();
                 if (data == null) {
                     Console.WriteLine( $"Failed to deserialize template \"{file.Header.GetXMLTemplateName()}\", has the structure been mapped yet?" );
@@ -104,8 +114,10 @@ namespace MBINCompiler {
 
                 try {
                     DecompileFile( file, output );
-                } catch {
+                // } catch {
                     // TODO: (GH) handle exceptions!
+                } finally {
+                    // nothing to do
                 }
             }
 
@@ -128,8 +140,10 @@ namespace MBINCompiler {
 
                 try {
                     CompileFile( file, output );
-                } catch {
+                // } catch {
                     // TODO: (GH) handle exceptions!
+                } finally {
+                    // nothing to do
                 }
             }
 
@@ -161,14 +175,30 @@ namespace MBINCompiler {
             return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
+        static void WaitForKeypress() {
+            Console.WriteLine("Press any key");
+            Console.ReadKey();
+        }
+
+        static void ShowVersionStringVerbose() {
+            Console.WriteLine( $"MBINCompiler v{GetVersionString()}" );
+            Console.WriteLine( $"libMBIN v{libMBIN.Version.GetVersionString()}" );
+        }
+
+        static void ShowVersionStringCompact() {
+            Console.WriteLine( libMBIN.Version.GetVersionString() );
+        }
+
         /// <summary>
         /// Show the version string.
         /// </summary>
         /// <returns>Always returns 0 (exit code = success)</returns>
-        static int ShowVersion() {
-            string ver = GetVersionString();
-            // TODO: (GH) show full version string?
-            Console.WriteLine( ver.Substring( 0, ver.Length - 2 ) );
+        static int ShowVersion( bool verbose = true ) {
+            if (verbose) {
+                ShowVersionStringVerbose();
+            } else {
+                ShowVersionStringCompact();
+            }
             return 0;
         }
 
@@ -177,7 +207,8 @@ namespace MBINCompiler {
         /// </summary>
         /// <returns>Always returns 0 (exit code = success)</returns>
         static int ShowHelp() {
-            Console.WriteLine($"MBINCompiler v{GetVersionString()}\n");
+            ShowVersionStringVerbose();
+            Console.WriteLine( );
 
             // TODO: (GH) show general description
             // TODO: (GH) show full syntax
@@ -191,6 +222,7 @@ namespace MBINCompiler {
             // TODO: (GH) can probably remove this or change the warning to be more informative.
             Console.WriteLine( "Recompiling .exml back to .mbin is available for testing, use at your own risk!" );
 
+            WaitForKeypress();
             return 0;
         }
 
@@ -204,7 +236,11 @@ namespace MBINCompiler {
         /// <summary>
         static int ShowError(string msg, bool showHelp = false, int exitCode = 2) {
             Console.WriteLine( $"ERROR: {msg}\n" );
-            if (showHelp) ShowHelp();
+            if (showHelp) {
+                ShowHelp();
+            } else {
+                WaitForKeypress();
+            }
             return showHelp ? 1 : exitCode;
         }
 
@@ -235,8 +271,8 @@ namespace MBINCompiler {
             if (args[0] == "--help") return ShowHelp();
             if (args[0] == "-h")     return ShowHelp();
 
-            if (args[0] == "-version") return ShowVersion();
-            if (args[0] == "-v")       return ShowVersion();
+            if (args[0] == "--version") return ShowVersion( true );
+            if (args[0] == "-v") return ShowVersion( false );
 
             // at least the first argument is an input param
 
@@ -292,9 +328,10 @@ namespace MBINCompiler {
                     DecompileFile( inputPath, outputPath, getVer );
                 }
             } catch (Exception e) {
-                return ShowError( $"ERROR: {e.Message}" );
+                return ShowError( e.Message );
             }
 
+            //WaitForKeypress();
             return 0;
         }
 
