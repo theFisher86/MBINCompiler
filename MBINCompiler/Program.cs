@@ -24,7 +24,7 @@ namespace MBINCompiler {
             }
         }
 
-        static void DecompileFile( string inputPath, string outputPath, bool getVersion = false ) {
+        static void DecompileFile( string inputPath, string outputPath, bool getVersion = false, bool verbose = false ) {
             outputPath = String.IsNullOrEmpty( outputPath ) ? inputPath : outputPath;
 
             outputPath = Path.ChangeExtension( outputPath, ".exml" ); // emoose XML, because there's no way this XML format is compatible with MXML
@@ -38,14 +38,7 @@ namespace MBINCompiler {
             file.Load( );
 
             if (getVersion) {
-                System.Version mbinVersion = file.Header.GetMBINVersion();
-                Console.WriteLine( mbinVersion );
-
-                //if (mbinVer == null) {
-                //    Console.WriteLine( (new System.Version(0,0,0,0)).ToString() );// "0.0.0.0" );
-                //} else {
-                //    Console.WriteLine( mbinVer );
-                //}
+                ShowMBINVersion(file, verbose);
 
             } else {
                 var data = file.GetData();
@@ -180,6 +173,20 @@ namespace MBINCompiler {
             Console.ReadKey();
         }
 
+        static void ShowMBINVersion(MBINFile file, bool verbose = false) {
+            System.Version mbinVersion = file.Header.GetMBINVersion();
+            string versionString = mbinVersion.ToString();
+
+            if (verbose) {
+                if (versionString != "0.0.0.0") {
+                    versionString = "Compiled with MBINCompiler v" + versionString;
+                } else {
+                    versionString = "Unknown MBIN version!\nNot compiled by MBINCompiler.";
+                }
+            }
+            Console.WriteLine( versionString );
+        }
+
         static void ShowVersionStringVerbose() {
             Console.WriteLine( $"MBINCompiler v{GetVersionString()}" );
             Console.WriteLine( $"libMBIN v{libMBIN.Version.GetVersionString()}" );
@@ -208,19 +215,16 @@ namespace MBINCompiler {
         /// <returns>Always returns 0 (exit code = success)</returns>
         static int ShowHelp() {
             ShowVersionStringVerbose();
-            Console.WriteLine( );
+            Console.WriteLine();
 
             // TODO: (GH) show general description
             // TODO: (GH) show full syntax
 
             Console.WriteLine( @"Usage: MBINCompiler [Input File or Folder]" );
             Console.WriteLine( @"Will write decompiled output to [Input File].exml or [Input Folder]\*.exml" );
-
+            Console.WriteLine();
             Console.WriteLine( @"Usage: MBINCompiler [Input Folder] [Output Folder]" );
             Console.WriteLine( @"Will write decompiled & recompiled files from [Input Folder] and write them to [Output Folder]" );
-
-            // TODO: (GH) can probably remove this or change the warning to be more informative.
-            Console.WriteLine( "Recompiling .exml back to .mbin is available for testing, use at your own risk!" );
 
             WaitForKeypress();
             return 0;
@@ -261,6 +265,7 @@ namespace MBINCompiler {
         static int Main( string[] args ) {
             string inputPath, outputPath;
             bool getVer = false;
+            bool versionVerbose = false;
 
             if (args.Length == 0)    return ShowHelp();
 
@@ -279,6 +284,7 @@ namespace MBINCompiler {
             // if there is 2 args, is the 2nd arg a version switch?
             if (args.Length > 1) {
                 getVer |= (args[1] == "--version");
+                versionVerbose |= getVer;
                 getVer |= (args[1] == "-v");
             }
 
@@ -288,7 +294,7 @@ namespace MBINCompiler {
                 outputPath = String.Empty;
                 if (!getVer && (args.Length > 1)) outputPath = Path.GetFullPath( args[1] );
             } catch (Exception e) {
-                return ShowError( $"ERROR: {e.Message}", true );
+                return ShowError( e.Message, true );
             }
 
             try {
@@ -325,10 +331,11 @@ namespace MBINCompiler {
                                    + $"FilePath: {inputPath}\n" );
                     }
 
-                    DecompileFile( inputPath, outputPath, getVer );
+                    DecompileFile( inputPath, outputPath, getVer, versionVerbose );
                 }
+
             } catch (Exception e) {
-                return ShowError( e.Message );
+                return ShowError( "An unknown exception occurred!\n" + e.Message + "\nStacktrace:\n" + e.StackTrace );
             }
 
             //WaitForKeypress();

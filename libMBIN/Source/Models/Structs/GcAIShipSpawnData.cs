@@ -2,7 +2,7 @@
 
 namespace libMBIN.Models.Structs
 {
-    [NMS(Size = 0xA8)]
+    [NMS(Size = 0xA8, Alignment = 0x8)]
     public class GcAIShipSpawnData : NMSTemplate
     {
         [NMS(Size = 0x20)]
