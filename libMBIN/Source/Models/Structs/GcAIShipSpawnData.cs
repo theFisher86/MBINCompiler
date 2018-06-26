@@ -8,7 +8,7 @@ namespace libMBIN.Models.Structs
         [NMS(Size = 0x20)]
         /* 0x00 */ public string Message;
 
-        /* 0x20 */ public TkInputEnum Shortcut;
+        /* 0x20 */ public int Shortcut;     // should be TkInputEnum I think...
         /* 0x24 */ public bool WarpIn;
         [NMS(Size = 0x3, Ignore = true)]
         /* 0x25 */ public byte[] Padding25;

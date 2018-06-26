@@ -2,7 +2,7 @@
 
 namespace libMBIN.Models.Structs
 {
-    [NMS(Size = 0x4E0)]
+    [NMS(Size = 0x4E0, Alignment = 0x8)]
     public class GcAlienPuzzleEntry : NMSTemplate
     {
         [NMS(Size = 0x20)]
