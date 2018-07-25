@@ -27,6 +27,9 @@ namespace MBINCompiler {
         static void DecompileFile( string inputPath, string outputPath, bool getVersion = false, bool verbose = false ) {
             outputPath = String.IsNullOrEmpty( outputPath ) ? inputPath : outputPath;
 
+            if (Path.GetExtension(outputPath) == ".PC")
+                outputPath = Path.GetFileNameWithoutExtension(outputPath);  // remove the ".PC"
+
             outputPath = Path.ChangeExtension( outputPath, ".exml" ); // emoose XML, because there's no way this XML format is compatible with MXML
 
             if (File.Exists( outputPath )) {
@@ -104,7 +107,7 @@ namespace MBINCompiler {
             outputPath = string.IsNullOrEmpty( outputPath ) ? inputPath : outputPath;
 
             foreach (var file in Directory.GetFiles( inputPath, "*.mbin*" )) {
-                if (!IsCompilable( file, "mbin" )) continue;
+                if (!IsFileType( file, "mbin" )) continue;
 
                 var output = file.Replace( inputPath, outputPath );
                 if (!Directory.Exists( Path.GetDirectoryName( output ) )) {
@@ -130,7 +133,7 @@ namespace MBINCompiler {
             if (!ValidateOutputPath( outputPath )) return;
 
             foreach (var file in Directory.GetFiles( inputPath, "*.exml" )) {
-                if (!IsCompilable( file, "exml" )) continue;
+                if (!IsFileType( file, "exml" )) continue;
 
                 var output = file.Replace( inputPath, outputPath );
                 if (!Directory.Exists( Path.GetDirectoryName( output ) )) {
@@ -156,12 +159,6 @@ namespace MBINCompiler {
             if (!string.IsNullOrEmpty( outputPath )) return true;
             Console.WriteLine( "Output folder not specified. Bulk compile aborted." );
             return false;
-        }
-
-        static bool IsCompilable( string filePath, string ext ) {
-            if (filePath.Contains( "LANGUAGE" )) return false;
-            if (filePath.Contains( "language" )) return false;
-            return IsFileType( filePath, ext );
         }
 
         static bool IsFileType( string filePath, string extType ) {
@@ -348,5 +345,5 @@ namespace MBINCompiler {
             return 0;
         }
 
-    } // class
-} // namespace
+    }
+}
